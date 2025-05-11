@@ -1,0 +1,151 @@
+:root {
+  /* Color System */
+  --color-primary: #0066FF;
+  --color-primary-light: #4D94FF;
+  --color-primary-dark: #0047B3;
+  
+  --color-secondary: #5856D6;
+  --color-secondary-light: #7A78E2;
+  --color-secondary-dark: #3F3E99;
+  
+  --color-accent: #FF3B30;
+  --color-accent-light: #FF6C64;
+  --color-accent-dark: #D60700;
+  
+  --color-success: #34C759;
+  --color-success-light: #70DB8C;
+  --color-success-dark: #248A3D;
+  
+  --color-warning: #FF9500;
+  --color-warning-light: #FFBC3E;
+  --color-warning-dark: #C76900;
+  
+  --color-error: #FF3B30;
+  --color-error-light: #FF6C64;
+  --color-error-dark: #C70D00;
+  
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F2F4F7;
+  --color-neutral-200: #E4E7EC;
+  --color-neutral-300: #D0D5DD;
+  --color-neutral-400: #98A2B3;
+  --color-neutral-500: #667085;
+  --color-neutral-600: #475467;
+  --color-neutral-700: #344054;
+  --color-neutral-800: #1D2939;
+  --color-neutral-900: #101828;
+  
+  --color-background: #FFFFFF;
+  --color-text: #101828;
+  
+  /* Spacing System (8px increments) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 1rem;    /* 16px */
+  --space-4: 1.5rem;  /* 24px */
+  --space-5: 2rem;    /* 32px */
+  --space-6: 2.5rem;  /* 40px */
+  --space-7: 3rem;    /* 48px */
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 2px 4px rgba(16, 24, 40, 0.05), 0 4px 8px -2px rgba(16, 24, 40, 0.05);
+  --shadow-lg: 0 4px 6px -1px rgba(16, 24, 40, 0.05), 0 2px 4px -2px rgba(16, 24, 40, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #101828;
+    --color-text: #FFFFFF;
+    
+    --color-neutral-50: #1D2939;
+    --color-neutral-100: #344054;
+    --color-neutral-200: #475467;
+    --color-neutral-300: #667085;
+    --color-neutral-400: #98A2B3;
+    --color-neutral-500: #D0D5DD;
+    --color-neutral-600: #E4E7EC;
+    --color-neutral-700: #F2F4F7;
+    --color-neutral-800: #F9FAFB;
+    --color-neutral-900: #FFFFFF;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: var(--line-height-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-heading);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+button {
+  font-family: var(--font-family);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  transition: all var(--transition-fast);
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+}
