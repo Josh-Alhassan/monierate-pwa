@@ -35,11 +35,28 @@ input {
 	background-color: transparent;
 	padding: 20px 18px;
 	width: 100%;
-	color: var(--text-color-alt);
+	color: var(--text-color-dark);
 	font-size: 1.4em;
 	border-radius: 5px;
 }
 
+input::placeholder {
+	color: var(--text-color-alt);
+}
+
 input:not(:last-child) {
 	margin-bottom: 24px;
+}
+
+tbody {
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 500;
+	color: var(--text-color-light);
+}
+
+td,
+th {
+	padding: 25px 10px;
+	padding-bottom: 5px;
 }
