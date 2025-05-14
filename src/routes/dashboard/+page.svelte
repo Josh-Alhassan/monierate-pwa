@@ -7,6 +7,11 @@
 	import WalletIcon from '../../utilities/WalletIcon.svelte';
 	import ProfileIcon from '../../utilities/ProfileIcon.svelte';
 
+	// Coins Images
+	import bitnob from '../../assets/bitnob.png';
+	import cedarMoney from '../../assets/cedermoney.png';
+	import beansapp from '../../assets/beansapp.png';
+
 	let activeTab = 'Sell';
 
 	const tabs = ['Sell', 'Buy', 'Send', 'Swap'];
@@ -72,11 +77,36 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>1</td><td>Coinbase</td><td>$50,000</td><td>0.5%</td></tr>
-					<tr><td>2</td><td>Binance</td><td>$49,500</td><td>0.4%</td></tr>
-					<tr><td>3</td><td>Kraken</td><td>$50,200</td><td>0.6%</td></tr>
-					<tr><td>4</td><td>Gemini</td><td>$50,100</td><td>0.5%</td></tr>
-					<tr><td>5</td><td>Bitstamp</td><td>$50,300</td><td>0.7%</td></tr>
+					<tr>
+						<td>1</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
+						<td>N2,800.28/$1</td>
+						<td>N200</td></tr
+					>
+					<tr>
+						<td>2</td>
+						<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
+						<td>N2,800.28/$1</td>
+						<td>N45</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
+						<td>N2,800.28/$1</td>
+						<td>N45</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>N45</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>N45</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -94,7 +124,7 @@
 					<input type="number" id="buy-amount" placeholder="Enter amount" required />
 				</div>
 
-				<label for="fiat-currency">Pay with</label>
+				<label for="fiat-currency">Select Asset to Buy</label>
 				<div class="trade-container">
 					<select id="fiat-currency" class="currency-select" required>
 						<option value="usd">USD</option>
@@ -115,15 +145,50 @@
 						<th>#</th>
 						<th>Name</th>
 						<th>Sell Price</th>
-						<th>Spread</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>1</td><td>Coinbase</td><td>$50,000</td><td>0.5%</td></tr>
-					<tr><td>2</td><td>Binance</td><td>$49,500</td><td>0.4%</td></tr>
-					<tr><td>3</td><td>Kraken</td><td>$50,200</td><td>0.6%</td></tr>
-					<tr><td>4</td><td>Gemini</td><td>$50,100</td><td>0.5%</td></tr>
-					<tr><td>5</td><td>Bitstamp</td><td>$50,300</td><td>0.7%</td></tr>
+					<tr>
+						<td>1</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -140,7 +205,7 @@
 					<input type="number" placeholder="Enter amount" required />
 				</div>
 
-				<label for="recipient-address">Recipient Address</label>
+				<label for="recipient-address">Destination Country</label>
 				<input type="text" placeholder="Enter wallet address" required class="trade-container" />
 
 				<button type="submit" class="trade-select">Send</button>
@@ -160,11 +225,46 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>1</td><td>Coinbase</td><td>$50,000</td><td>0.5%</td></tr>
-					<tr><td>2</td><td>Binance</td><td>$49,500</td><td>0.4%</td></tr>
-					<tr><td>3</td><td>Kraken</td><td>$50,200</td><td>0.6%</td></tr>
-					<tr><td>4</td><td>Gemini</td><td>$50,100</td><td>0.5%</td></tr>
-					<tr><td>5</td><td>Bitstamp</td><td>$50,300</td><td>0.7%</td></tr>
+					<tr>
+						<td>1</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -172,7 +272,7 @@
 		<!-- Swap Form -->
 		<div class="sell-section">
 			<form>
-				<label for="from-asset">From</label>
+				<label for="from-asset">Amount to Swap</label>
 				<div class="trade-container">
 					<select class="currency-select" required>
 						<option value="btc">BTC</option>
@@ -181,7 +281,7 @@
 					<input type="number" placeholder="Amount" required />
 				</div>
 
-				<label for="to-asset">To</label>
+				<label for="to-asset">Select Asset to Swap</label>
 				<div class="trade-container">
 					<select class="currency-select" required>
 						<option value="eth">ETH</option>
@@ -206,11 +306,46 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>1</td><td>Coinbase</td><td>$50,000</td><td>0.5%</td></tr>
-					<tr><td>2</td><td>Binance</td><td>$49,500</td><td>0.4%</td></tr>
-					<tr><td>3</td><td>Kraken</td><td>$50,200</td><td>0.6%</td></tr>
-					<tr><td>4</td><td>Gemini</td><td>$50,100</td><td>0.5%</td></tr>
-					<tr><td>5</td><td>Bitstamp</td><td>$50,300</td><td>0.7%</td></tr>
+					<tr>
+						<td>1</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
+						<td>N2,800.28/$1</td>
+						<td>
+							<a href="/dashboard/transactions" class="trade-view"> View </a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -324,6 +459,23 @@
 	.provider-trade-infos {
 		width: 100%;
 		border-collapse: collapse;
+	}
+
+	.first-data {
+		text-align: left;
+		padding-left: 3em;
+
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.trade-view {
+		font-size: 0.9em;
+		border: 1px solid var(--primary-color);
+		border-radius: 4px;
+		padding: 10px 20px;
+		text-decoration: none;
 	}
 
 	.nav-routes {
