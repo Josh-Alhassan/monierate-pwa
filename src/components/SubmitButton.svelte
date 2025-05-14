@@ -26,6 +26,7 @@
 
 	.submit-btn:hover {
 		background-color: var(--primary-color-dark);
+		color: var(--text-color-dark);
 	}
 
 	.submit-btn:disabled {
