@@ -1,5 +1,7 @@
 <script>
 	import SubmitButton from './SubmitButton.svelte';
+	import google from '../assets/devicon_google.png';
+	import apple from '../assets/apple.png';
 
 	let activeTab = 'signup';
 
@@ -102,6 +104,29 @@
 			</form>
 		</div>
 	{/if}
+
+	<div class="signup-footer">
+		<p class="auth-continue">or continue with</p>
+
+		<div class="auth-accounts">
+			<a href="#" class="auth-account">
+				<img src={google} alt="Google" />
+				Google
+			</a>
+
+			<a href="#" class="auth-account">
+				<img src={apple} alt="Apple" />
+				Apple
+			</a>
+		</div>
+		<!-- {#if activeTab === 'signup'}
+			<p>Already have an account? <a href="#" on:click={() => (activeTab = 'login')}>Log In</a></p>
+		{:else}
+			<p>
+				Don&apos;t have an account? <a href="#" on:click={() => (activeTab = 'signup')}>Sign Up</a>
+			</p>
+		{/if} -->
+	</div>
 </div>
 
 <style>
@@ -145,16 +170,35 @@
 		margin-top: 40px;
 	}
 
-	.submit-btn {
-		padding: 13px 60px;
-		font-size: 1.4em;
-		border-radius: 5px;
-		font-weight: 600;
+	.signup-footer {
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	.auth-accounts {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-top: 20px;
+	}
+
+	.auth-account {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-decoration: none;
-		background: var(--primary-color);
-		color: var(--text-color-white);
-		border: none;
-		cursor: pointer;
-		width: 100%;
+		color: var(--text-color-alt);
+		font-size: 1.4em;
+		gap: 10px;
+		font-weight: 600;
+		font-size: 1.4em;
+		padding: 18px 53px;
+		border-radius: 5px;
+		border: 1px solid #f2f2f2;
+	}
+
+	.auth-account > img {
+		width: 20px;
+		height: 20px;
 	}
 </style>
