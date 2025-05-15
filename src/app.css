@@ -38,6 +38,8 @@ input {
 	color: var(--text-color-dark);
 	font-size: 1.4em;
 	border-radius: 5px;
+	-moz-appearance: textfield; /* Firefox */
+	appearance: textfield;
 }
 
 input::placeholder {
