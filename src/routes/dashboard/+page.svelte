@@ -27,7 +27,8 @@
 	<div class="trade-btns">
 		{#each tabs as tab}
 			<button
-				class="trade-btn {activeTab === tab ? 'active' : ''}"
+				class="trade-btn"
+				class:active={activeTab === tab}
 				on:click={() => handleTabClick(tab)}
 			>
 				{tab}
@@ -86,5 +87,12 @@
 		transition: background-color 0.2s;
 		text-transform: uppercase;
 		width: 100%;
+	}
+
+	.trade-btn.active {
+		background-color: var(--primary-color);
+		color: var(--text-color-white);
+		border-bottom: 2px solid #000;
+		font-weight: bold;
 	}
 </style>

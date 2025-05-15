@@ -1,3 +1,13 @@
+<script>
+    let activeTab = 'Sell';
+
+	const tabs = ['Sell', 'Buy', 'Send', 'Swap'];
+
+	function handleTabClick(tab) {
+		activeTab = tab;
+	}
+</script>
+
 <div class="sell-section">
 	<form>
 		<label for="buy-amount">Amount to buy (crypto)</label>
@@ -29,16 +39,26 @@
 </div>
 
 <style>
-	/* .dashboard-container {
-		padding: 22px;
-	}
-
 	.trade-btns {
 		display: flex;
 		gap: 20px;
 		margin-top: 14px;
 		margin-bottom: 20px;
-	} */
+	}
+
+	.trade-btn {
+		padding: 12px 24px;
+		font-size: 1.2em;
+		font-family: inherit;
+		font-weight: 600;
+		color: var(--text-color-light);
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.2s;
+		text-transform: uppercase;
+		width: 100%;
+	}
 
 	.trade-select {
 		padding: 12px 24px;

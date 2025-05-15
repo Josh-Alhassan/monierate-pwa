@@ -9,21 +9,21 @@
 			href: '/dashboard',
 			label: 'Home',
 			icon: HomeIcon,
-			iconProps: { width: 24, height: 24 },
+			iconProps: { width: 20, height: 20 },
 			activePaths: ['/dashboard']
 		},
 		{
 			href: '/dashboard/wallet',
 			label: 'Wallet',
 			icon: WalletIcon,
-			iconProps: { width: 24, height: 24, stroke: '#B8B9B9' },
+			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
 			activePaths: ['/dashboard/wallet', '/dashboard/transactions']
 		},
 		{
 			href: '/dashboard/profile',
 			label: 'Profile',
 			icon: ProfileIcon,
-			iconProps: { width: 24, height: 24, stroke: '#B8B9B9' },
+			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
 			activePaths: ['/dashboard/profile', '/dashboard/settings']
 		}
 	];
@@ -31,7 +31,7 @@
 	$: currentPath = $page.url.pathname;
 
 	function isActive(item) {
-		return item.activePaths?.some((path) => currentPath.startsWith(path)) || false;
+		return item.activePaths?.some((path) => currentPath === path) || false;
 	}
 </script>
 
@@ -74,10 +74,6 @@
 		padding: 0.5em;
 		border-radius: 10px;
 	}
-
-	/* .nav-label {
-		color: var(--text-color-light);
-	} */
 
 	.nav-routes-btn:hover {
 		opacity: 0.9;
