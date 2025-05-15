@@ -50,8 +50,9 @@
 			<h2 class="signup-heading">Sign Up</h2>
 			<p class="signup-terms">
 				By continuing, you agree to monierate
-				<a href="#">Terms of Service</a> and acknowledge you&apos;ve read our
-				<a href="#">Privacy Policy</a>
+				<a href="#" class="signup-terms-link">Terms of Service</a> and acknowledge you&apos;ve read
+				our
+				<a href="#" class="signup-terms-link">Privacy Policy</a>
 			</p>
 
 			<form class="signup-form" on:submit|preventDefault={handleSubmit}>
@@ -141,8 +142,8 @@
 	}
 
 	.auth-btn {
-		padding: 13px 60px;
-		font-size: 1.4em;
+		padding: 13px 40px;
+		font-size: 1.2em;
 		font-family: inherit;
 		border-radius: 5px;
 		font-weight: 600;
@@ -164,6 +165,14 @@
 
 	.signup-terms {
 		font-size: 1.4em;
+		font-weight: 400;
+		line-height: 22px;
+		letter-spacing: -1%;
+		color: var(--text-color-light);
+	}
+
+	.signup-terms-link {
+		color: var(--primary-color);
 	}
 
 	.signup-form {

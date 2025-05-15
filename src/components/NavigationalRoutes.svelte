@@ -58,7 +58,7 @@
 		margin-top: 5rem;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: space-between;
 		gap: 12px;
 	}
 
