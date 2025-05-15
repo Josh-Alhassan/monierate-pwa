@@ -23,7 +23,7 @@
 				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
 				<td>N2,800.28/$1</td>
 				<td>
-					<a href="/dashboard/transactions" class="trade-view"> View </a>
+					<a href="/dashboard/provider" class="trade-view"> View </a>
 				</td>
 			</tr>
 			<tr>
@@ -31,7 +31,7 @@
 				<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
 				<td>N2,800.28/$1</td>
 				<td>
-					<a href="/dashboard/transactions" class="trade-view"> View </a>
+					<a href="/dashboard/provider" class="trade-view"> View </a>
 				</td>
 			</tr>
 			<tr>
@@ -39,7 +39,7 @@
 				<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
 				<td>N2,800.28/$1</td>
 				<td>
-					<a href="/dashboard/transactions" class="trade-view"> View </a>
+					<a href="/dashboard/provider" class="trade-view"> View </a>
 				</td>
 			</tr>
 			<tr>
@@ -47,7 +47,7 @@
 				<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
 				<td>N2,800.28/$1</td>
 				<td>
-					<a href="/dashboard/transactions" class="trade-view"> View </a>
+					<a href="/dashboard/provider" class="trade-view"> View </a>
 				</td>
 			</tr>
 			<tr>
@@ -55,7 +55,7 @@
 				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
 				<td>N2,800.28/$1</td>
 				<td>
-					<a href="/dashboard/transactions" class="trade-view"> View </a>
+					<a href="/dashboard/provider" class="trade-view"> View </a>
 				</td>
 			</tr>
 		</tbody>
@@ -87,5 +87,6 @@
 		border-radius: 4px;
 		padding: 10px 20px;
 		text-decoration: none;
+		color: var(--primary-color);
 	}
 </style>
