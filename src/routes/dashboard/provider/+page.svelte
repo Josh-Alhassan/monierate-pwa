@@ -3,10 +3,16 @@
 
 	// Image Import
 	import gtbank from '../../../assets/gtbank.png';
+	import conversion from '../../../assets/convert.png';
 
 	// Global CSS import
 	import '../../../app.css';
 	import ToggleButton from '../../../utilities/ToggleButton.svelte';
+	import TimelineData from '../../../utilities/RateDurationDay.svelte';
+	import RateDurationDay from '../../../utilities/RateDurationDay.svelte';
+	import exchangeRateTracker from '../../../assets/exchange-rate-tracker.svg';
+	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
+	import NavHeader from '../../../utilities/NavHeader.svelte';
 
 	let selected = 'Dollar';
 
@@ -15,14 +21,23 @@
 	function handleToggle(option) {
 		selected = option;
 	}
+
+	// Exchange Rate Tracker functionalities
+	let activeDay = '24hrs';
+	const durations = ['24hrs', '7days', '2weeks'];
+
+	function setActive(day) {
+		activeDay = day;
+	}
 </script>
 
 <section class="provider-section">
-	<div class="provider-nav__header">
-		<a href="/dashboard" class="nav-return"> &lt; Back </a>
-
-		<Notification count={3} />
-	</div>
+	<NavHeader
+		backHref="/dashboard"
+		backText="&lt; Back"
+		notificationCount={3}
+		showNotification={true}
+	/>
 
 	<!-- Provider Transaction Section -->
 	<div class="transaction-container">
@@ -62,44 +77,73 @@
 			<h2 class="converter-title">Currency Converter</h2>
 
 			<div class="convert-amount">
-				<label for="currency">Amount to Convert</label>
-				<div class="trade-container">
-					<select id="currency" class="currency-select" required>
-						<option value="usd">USD - US Dollar</option>
-						<option value="eur">EUR - Euros</option>
-						<option value="gbp">GBP - Pounds</option>
-					</select>
-					<input
-						type="number"
-						id="sell-amount"
-						class="input-amount"
-						placeholder="0.000"
-						style="text-align: right"
-						required
-					/>
+				<div>
+					<label for="currency">Amount to Convert</label>
+					<div class="trade-container">
+						<select id="currency" class="currency-select" required>
+							<option class="select-option" value="usd">USD - US Dollar</option>
+							<option class="select-option" value="eur">EUR - Euros</option>
+							<option class="select-option" value="gbp">GBP - Pounds</option>
+						</select>
+						<input
+							type="number"
+							id="sell-amount"
+							class="input-amount"
+							placeholder="0"
+							style="text-align: right"
+							required
+						/>
+					</div>
+				</div>
+				<img src={conversion} alt="loading" class="conversion-img" />
+				<div>
+					<label for="currency">Converting to</label>
+					<div class="trade-container">
+						<select id="currency" class="currency-select" required>
+							<option class="select-option" value="usd"> NGN - NG Naira </option>
+							<option class="select-option" value="eur">EUR - Euros</option>
+							<option class="select-option" value="gbp">GBP - Pounds</option>
+						</select>
+						<input
+							type="number"
+							id="sell-amount"
+							class="input-amount"
+							placeholder="0"
+							style="text-align: right"
+							required
+						/>
+					</div>
 				</div>
 			</div>
 		</section>
+
+		<!-- Exchange Rate Tracker -->
+		<section class="exchange-rate-tracker">
+			<h2 class="converter-title">Exchange Rate Tracker</h2>
+
+			<div class="rate-tracker-timeline">
+				<div class="rate-duration">
+					{#each durations as day}
+						<RateDurationDay {day} active={activeDay === day} on:click={() => setActive(day)} />
+					{/each}
+				</div>
+				<select id="currency" class="currency-select rate-currency" required>
+					<option class="select-option" value="usd"> Dollar </option>
+					<option class="select-option" value="eur">Euros</option>
+					<option class="select-option" value="gbp">Pounds</option>
+				</select>
+			</div>
+
+			<img src={exchangeRateTracker} alt="Exchange Rate Tracker" />
+		</section>
 	</div>
+
+	<NavigationalRoutes />
 </section>
 
 <style>
 	.provider-section {
 		padding: 30px 22px;
-	}
-
-	.nav-return {
-		font-size: 1.4em;
-		color: var(--text-color-alt);
-		text-decoration: none;
-	}
-
-	.provider-nav__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-
-		margin-bottom: 22px;
 	}
 
 	.transaction-container {
@@ -198,6 +242,35 @@
 
 	.convert-amount {
 		margin-top: 3em;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+		gap: 5px;
+	}
+
+	.conversion-img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.exchange-rate-tracker {
+		margin-top: 2em;
+		margin-bottom: 4.7em;
+	}
+
+	.rate-tracker-timeline {
+		margin-top: 2.1em;
+		display: flex;
+
+		width: 100%;
+	}
+
+	.rate-duration {
+		width: 300%;
+		display: flex;
+		gap: 5px;
 	}
 
 	/* Explicit */
@@ -229,10 +302,10 @@
 		appearance: none; /* removes default styling (Chrome, Safari) */
 		-webkit-appearance: none; /* Safari */
 		-moz-appearance: none; /* Firefox */
-		background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 20 20" width="5" xmlns="http://www.w3.org/2000/svg"><path d="M5.516 7.548l4.245 4.246 4.245-4.246"/></svg>');
+		background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M5.516 7.548l4.245 4.246 4.245-4.246"/></svg>');
 		background-repeat: no-repeat;
 		background-position: right 10px center;
-		background-size: 12px;
+		background-size: 25px;
 		cursor: pointer;
 	}
 
@@ -244,7 +317,7 @@
 		outline: none;
 	}
 
-	.currency-select > option {
+	.select-option:hover {
 		padding: 10px 15px;
 	}
 
