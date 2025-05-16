@@ -8,7 +8,6 @@
 	// Global CSS import
 	import '../../../app.css';
 	import ToggleButton from '../../../utilities/ToggleButton.svelte';
-	import TimelineData from '../../../utilities/RateDurationDay.svelte';
 	import RateDurationDay from '../../../utilities/RateDurationDay.svelte';
 	import exchangeRateTracker from '../../../assets/exchange-rate-tracker.svg';
 	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';

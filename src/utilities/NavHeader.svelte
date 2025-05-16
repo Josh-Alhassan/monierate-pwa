@@ -4,13 +4,16 @@
 	export let notificationCount = 0;
 	export let showNotification = true;
 	import NotificationIcon from './NotificationIcon.svelte';
+
+	import '../app.css';
+	import Notification from '../components/Notification.svelte';
 </script>
 
 <div class="provider-nav__header">
 	<a href={backHref} class="nav-return">{backText}</a>
 
 	{#if showNotification}
-		<NotificationIcon count={notificationCount} />
+		<Notification count={notificationCount} />
 	{/if}
 </div>
 
