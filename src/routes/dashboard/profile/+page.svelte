@@ -24,7 +24,7 @@
 				leftIcon={profileIcon}
 				label="My Account"
 				rightIcon={arrRight}
-				urlPath="/dashboard/profile/xyz"
+				urlPath="/dashboard/profile/myaccount"
 			/>
 
 			<ProfileLabel

@@ -18,6 +18,7 @@
 	--green-color: #05a615;
 	--green-color-bg: #e7f5ec;
 	--primary-color-bg-opacity: #1f75fe0d;
+	--inactive-btn: #d1d0d0;
 }
 
 body {
@@ -64,4 +65,8 @@ td,
 th {
 	padding: 25px 10px;
 	padding-bottom: 5px;
+}
+
+.section {
+	padding: 30px 22px;
 }

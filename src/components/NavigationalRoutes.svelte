@@ -9,7 +9,7 @@
 			href: '/dashboard',
 			label: 'Home',
 			icon: HomeIcon,
-			iconProps: { width: 20, height: 20 },
+			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
 			activePaths: ['/dashboard']
 		},
 		{
@@ -87,6 +87,6 @@
 	.nav-routes-btn.active {
 		background: var(--primary-color);
 		color: var(--text-color-white);
-		padding: 15px 25px;
+		padding: 10px 35px;
 	}
 </style>
