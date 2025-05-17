@@ -1,6 +1,7 @@
 <script>
 	import AppButton from '../../../../components/AppButton.svelte';
 	import TextInput from '../../../../components/TextInput.svelte';
+	import AppLink from '../../../../utilities/AppLink.svelte';
 	import NavHeader from '../../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../../utilities/TitleLabel.svelte';
 
@@ -22,9 +23,9 @@
 				bind:value={password}
 			/>
 
-			<AppButton type="submit" inactive={false} textColor="var(--primary-color)">
-				Change Password
-			</AppButton>
+			<AppLink href="/dashboard/profile/password/changepassword" fullWidth={true}
+				>Change Password</AppLink
+			>
 		</form>
 	</div>
 </section>
