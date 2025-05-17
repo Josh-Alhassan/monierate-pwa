@@ -45,7 +45,7 @@
 				leftIcon={faq}
 				label="FAQ"
 				rightIcon={arrRight}
-				urlPath="/dashboard/profile/xyz"
+				urlPath="/dashboard/profile/faq"
 			/>
 		</div>
 
@@ -82,7 +82,6 @@
 
 	.account-container {
 		margin-top: 14px;
-
 		display: flex;
 		flex-direction: column;
 		gap: 0.7em;
