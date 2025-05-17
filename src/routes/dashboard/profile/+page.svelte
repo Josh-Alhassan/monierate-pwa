@@ -11,6 +11,7 @@
 	import helpCenter from '../../../assets/help-center-icon.svg';
 	import faq from '../../../assets/faq-icon.svg';
 	import bell from '../../../assets/bell-icon.svg';
+	import file from '../../../assets/contract-icon.svg';
 </script>
 
 <section class="profile-section">
@@ -46,6 +47,13 @@
 				label="FAQ"
 				rightIcon={arrRight}
 				urlPath="/dashboard/profile/faq"
+			/>
+
+			<ProfileLabel
+				leftIcon={file}
+				label="Terms and Privacy Policy"
+				rightIcon={arrRight}
+				urlPath="/dashboard/profile/terms"
 			/>
 		</div>
 
