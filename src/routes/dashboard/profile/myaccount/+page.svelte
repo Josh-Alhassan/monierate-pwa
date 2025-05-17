@@ -1,4 +1,5 @@
 <script>
+	import AppButton from '../../../../components/AppButton.svelte';
 	import TextInput from '../../../../components/TextInput.svelte';
 	import NavHeader from '../../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../../utilities/TitleLabel.svelte';
@@ -24,7 +25,7 @@
 				bind:value={email}
 			/>
 
-			<button type="submit" class="input-button">Save Change</button>
+			<AppButton type="submit" textColor="#000">Save Change</AppButton>
 		</form>
 	</div>
 </section>
@@ -57,7 +58,7 @@
 		font-weight: 500;
 	} */
 
-	.input-button {
+	/* .input-button {
 		width: 100%;
 		background-color: var(--secondary-color);
 		outline: none;
@@ -69,5 +70,5 @@
 		font-size: 1.2em;
 		font-weight: 500;
 		color: var(--inactive-btn);
-	}
+	} */
 </style>
