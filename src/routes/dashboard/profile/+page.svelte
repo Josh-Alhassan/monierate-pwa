@@ -31,7 +31,7 @@
 				leftIcon={keyIcon}
 				label="Password"
 				rightIcon={arrRight}
-				urlPath="/dashboard/profile/xyz"
+				urlPath="/dashboard/profile/password"
 			/>
 
 			<ProfileLabel

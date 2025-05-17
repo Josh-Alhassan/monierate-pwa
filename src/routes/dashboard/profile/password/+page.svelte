@@ -4,31 +4,27 @@
 	import NavHeader from '../../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../../utilities/TitleLabel.svelte';
 
-	let email = '';
+	let password = '';
 </script>
 
 <section class="section">
-	<NavHeader backHref="/dashboard/profile" notificationCount={5} />
-	<TitleLabel text="My Account" level="h2" />
+	<NavHeader backHref="/dashboard/profile" notificationCount={2} />
+	<TitleLabel text="Password" />
 
 	<div class="input-container">
 		<form>
 			<TextInput
-				id="email"
-				label="Email"
-				type="email"
-				placeholder="seainjon@gmail.com"
+				id="password"
+				label="Current Password"
+				type="password"
+				placeholder="Enter your password"
 				required
-				bind:value={email}
+				bind:value={password}
 			/>
 
-			<AppButton type="submit" textColor="#000">Save Change</AppButton>
+			<AppButton type="submit" inactive={false} textColor="var(--primary-color)">
+				Change Password
+			</AppButton>
 		</form>
 	</div>
 </section>
-
-<!-- <style>
-	.input-container {
-		margin-top: 4.1em;
-	}
-</style> -->
