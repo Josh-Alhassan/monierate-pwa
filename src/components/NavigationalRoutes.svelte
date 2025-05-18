@@ -30,14 +30,16 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
+		max-width: 425px;
 		width: 100%;
+		transform: translate(119%, 10%);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		background-color: #fff;
 		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 		padding: 0.5rem 0;
-		z-index: 100; /* ensure it's above other elements */
+		z-index: 100;
 	}
 
 	.nav-route {

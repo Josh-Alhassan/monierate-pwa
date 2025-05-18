@@ -65,6 +65,7 @@
 <style>
 	.select-provider {
 		margin-top: 50px;
+		margin-bottom: 100px;
 	}
 
 	.provider-trade-infos {

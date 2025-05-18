@@ -6,7 +6,6 @@
 	import SellTab from '../../components/SellTab.svelte';
 	import TableProvider from '../../components/TableProvider.svelte';
 	import BuyTab from '../../components/BuyTab.svelte';
-	import ProviderTable from '../../components/ProviderTable.svelte';
 	import SendTab from '../../components/SendTab.svelte';
 	import SwapTab from '../../components/SwapTab.svelte';
 	import NavigationalRoutes from '../../components/NavigationalRoutes.svelte';
