@@ -2,5 +2,7 @@
 	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
 </script>
 
-<h1>Wallet</h1>
+<section class="section">
+	<h1>Wallet</h1>
+</section>
 <NavigationalRoutes />

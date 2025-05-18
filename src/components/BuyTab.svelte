@@ -73,7 +73,7 @@
 </div>
 
 <style>
-	.trade-btns {
+	/* .trade-btns {
 		display: flex;
 		gap: 20px;
 		margin-top: 14px;
@@ -92,7 +92,7 @@
 		transition: background-color 0.2s;
 		text-transform: uppercase;
 		width: 100%;
-	}
+	} */
 
 	.trade-select {
 		padding: 12px 24px;

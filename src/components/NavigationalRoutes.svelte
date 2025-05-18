@@ -1,88 +1,64 @@
-<!-- <script>
-	import { page } from '$app/stores';
-	import HomeIcon from '../utilities/HomeIcon.svelte';
-	import ProfileIcon from '../utilities/ProfileIcon.svelte';
-	import WalletIcon from '../utilities/WalletIcon.svelte';
-
+<script>
+	// Array of navigation items
 	const navItems = [
-		{
-			href: '/dashboard',
-			label: 'Home',
-			icon: HomeIcon,
-			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
-			activePaths: ['/dashboard']
-		},
-		{
-			href: '/dashboard/wallet',
-			label: 'Wallet',
-			icon: WalletIcon,
-			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
-			activePaths: ['/dashboard/wallet', '/dashboard/transactions']
-		},
-		{
-			href: '/dashboard/profile',
-			label: 'Profile',
-			icon: ProfileIcon,
-			iconProps: { width: 20, height: 20, stroke: '#B8B9B9' },
-			activePaths: ['/dashboard/profile', '/dashboard/settings']
-		}
+		{ href: '/dashboard', icon: 'bx-home-circle', label: 'Dashboard' },
+		{ href: '/dashboard/wallet', icon: 'bx-wallet-cards', label: 'Wallet' },
+		{ href: '/dashboard/profile', icon: 'bx-user-square', label: 'Profile' }
 	];
 
-	$: currentPath = $page.url.pathname;
+	// This will hold the currently active route
+	let activeRoute = '/dashboard';
 
-	function isActive(item) {
-		return item.activePaths?.some((path) => currentPath === path) || false;
+	// Function to handle icon click
+	function setActive(href) {
+		activeRoute = href;
 	}
 </script>
 
-<nav class="nav-routes" aria-label="Main navigation">
-	{#each navItems as item}
-		<a
-			href={item.href}
-			class="nav-routes-btn"
-			class:active={isActive(item)}
-			aria-current={isActive(item) ? 'page' : undefined}
-		>
-			<svelte:component this={item} color={isActive(item) ? '#007bff' : '#B8B9B9'} />
-			<span class="nav-label">{item.label}</span>
+<div class="nav-routes">
+	{#each navItems as { href, icon, label }}
+		<a {href} class="nav-route" aria-label={label} on:click={() => setActive(href)}>
+			<i class={`bx ${icon} ${href === activeRoute ? 'active' : ''}`}></i>
 		</a>
 	{/each}
-</nav>
+</div>
 
 <style>
+	@import '../assets/free/fonts/basic/boxicons.css';
+
 	.nav-routes {
-		margin-top: 5rem;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
-		gap: 12px;
-	}
-
-	.nav-routes-btn {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
 		align-items: center;
-		text-decoration: none;
-		color: var(--text-color-light);
-		font-size: 1.4em;
-		transition: all 0.2s ease;
-		padding: 0.5em;
-		border-radius: 10px;
+		background-color: #fff;
+		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+		padding: 0.5rem 0;
+		z-index: 100; /* ensure it's above other elements */
 	}
 
-	.nav-routes-btn:hover {
-		opacity: 0.9;
+	.nav-route {
+		width: 100%;
+		padding: 32px 0 0;
+		display: block;
+		background-color: #fff;
+		margin-bottom: 5px;
+		text-align: center;
+		cursor: pointer;
 	}
 
-	.nav-routes-btn:focus-visible {
-		outline: 2px solid var(--primary-color);
-		outline-offset: 2px;
+	.bx {
+		font-size: 3em;
+		color: #b8b9b9;
+		font-weight: 100;
+		transition: color 0.2s ease;
 	}
 
-	.nav-routes-btn.active {
-		background: var(--primary-color);
-		color: var(--text-color-white);
-		padding: 10px 35px;
+	.bx.active,
+	.bx:hover {
+		color: var(--primary-color);
 	}
-</style> -->
+</style>

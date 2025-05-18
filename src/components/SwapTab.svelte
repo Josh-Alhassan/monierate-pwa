@@ -58,6 +58,8 @@
 		<label for="to-asset">Select Asset to Swap</label>
 		<div class="trade-container">
 			<CustomDropdown options={cryptoOptions} selected={selectedCrypto} onSelect={handleSelect} />
+
+			<input type="number" class="input-amount" required />
 		</div>
 
 		<button type="submit" class="trade-select">Swap</button>
