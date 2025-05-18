@@ -120,13 +120,6 @@
 				Apple
 			</a>
 		</div>
-		<!-- {#if activeTab === 'signup'}
-			<p>Already have an account? <a href="#" on:click={() => (activeTab = 'login')}>Log In</a></p>
-		{:else}
-			<p>
-				Don&apos;t have an account? <a href="#" on:click={() => (activeTab = 'signup')}>Sign Up</a>
-			</p>
-		{/if} -->
 	</div>
 </div>
 
