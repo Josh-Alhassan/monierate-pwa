@@ -24,7 +24,6 @@
 html {
 	max-width: 425px;
 	margin: 0 auto;
-	/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 body {
@@ -65,7 +64,7 @@ input:not(:last-child) {
 table,
 tbody {
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
 	color: var(--text-color-light);
@@ -73,8 +72,12 @@ tbody {
 
 td,
 th {
-	padding: 25px 5px;
+	padding: 10px 5px;
 	text-align: left;
+}
+
+tr {
+	border-bottom: 1px solid var(--grey-base);
 }
 
 .section {

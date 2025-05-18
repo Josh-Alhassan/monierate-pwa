@@ -2,7 +2,7 @@
 	// Array of navigation items
 	const navItems = [
 		{ href: '/dashboard', icon: 'bx-home-circle', label: 'Home' },
-		{ href: '/dashboard/wallet', icon: 'bx-wallet-cards', label: 'Wallet' },
+		{ href: '/dashboard/wallet', icon: 'bx-wallet-cards', label: 'Rates' },
 		{ href: '/dashboard/profile', icon: 'bx-user-square', label: 'Profile' }
 	];
 
@@ -30,7 +30,7 @@
 		position: relative;
 		bottom: 0;
 		left: 0;
-		width: 380px;
+		width: 275px;
 		transform: translate(0%, 10%);
 		display: flex;
 		justify-content: space-between;
@@ -59,7 +59,7 @@
 	}
 
 	.bx {
-		font-size: 3em;
+		font-size: 2em;
 		color: #b8b9b9;
 		font-weight: 100;
 		transition: color 0.2s ease;

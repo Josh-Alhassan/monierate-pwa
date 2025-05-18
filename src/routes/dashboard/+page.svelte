@@ -76,8 +76,8 @@
 	}
 
 	.trade-btn {
-		padding: 12px 24px;
-		font-size: 1.2em;
+		padding: 12px;
+		font-size: 1.1em;
 		font-family: 'Onest', sans-serif;
 		font-weight: 600;
 		color: var(--text-color-light);

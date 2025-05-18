@@ -29,12 +29,12 @@
 		</div>
 		<LabelTag text="12mins ago" icon={ClockIcon} />
 	</div>
-	<label for="provider">Select Provider</label>
+
 	<table class="provider-trade-infos">
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Name</th>
+				<th>Provider</th>
 				<th>Sell Price</th>
 				<th>Spread</th>
 				<th></th>
@@ -112,10 +112,13 @@
 
 	.first-data {
 		text-align: left;
-		display: flex;
-		align-items: flex-end;
-		/* justify-content: center; */
-		gap: 6px;
+	}
+
+	.first-data img {
+		width: 15px;
+		display: inline-block;
+		margin-bottom: -4px;
+		margin-right: 6px;
 	}
 
 	.currencies-wrap {

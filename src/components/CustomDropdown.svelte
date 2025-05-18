@@ -57,7 +57,7 @@
 	.custom-dropdown {
 		position: relative;
 		font-family: sans-serif;
-		font-size: 1.2em;
+		font-size: 1em;
 		font-weight: 600;
 		font-family: 'Onest', sans-serif;
 		outline: none;
@@ -73,7 +73,7 @@
 		align-items: center;
 		justify-content: space-between;
 		border: 1px solid #ccc;
-		padding: 15px;
+		padding: 15px 10px;
 		background-color: white;
 		border-radius: 5px;
 		cursor: pointer;
@@ -93,6 +93,10 @@
 	.selected img {
 		width: 18px;
 		height: 18px;
+	}
+
+	.selected-group span {
+		font-size: 0.8em;
 	}
 
 	.options {
