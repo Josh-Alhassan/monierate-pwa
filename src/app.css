@@ -81,3 +81,19 @@ th {
 	display: flex;
 	gap: 6px;
 }
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.input-amount:focus {
+	outline: none;
+	text-align: right;
+}
