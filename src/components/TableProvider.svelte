@@ -113,7 +113,8 @@
 	.first-data {
 		text-align: left;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
+		/* justify-content: center; */
 		gap: 6px;
 	}
 

@@ -79,11 +79,11 @@
 	.trade-btn {
 		padding: 12px 24px;
 		font-size: 1.2em;
-		font-family: inherit;
+		font-family: 'Onest', sans-serif;
 		font-weight: 600;
 		color: var(--text-color-light);
 		border: none;
-		border-radius: 4px;
+		border-radius: 5px;
 		cursor: pointer;
 		transition: background-color 0.2s;
 		text-transform: uppercase;
@@ -93,7 +93,6 @@
 	.trade-btn.active {
 		background-color: var(--primary-color);
 		color: var(--text-color-white);
-		border-bottom: 2px solid #000;
-		font-weight: bold;
+		font-weight: 700;
 	}
 </style>

@@ -1,7 +1,3 @@
-<script>
-	import Currency from '../utilities/Currency.svelte';
-</script>
-
 <div class="tab-section">
 	<form>
 		<label for="sell-amount">Amount to sell (fiat)</label>
@@ -54,7 +50,7 @@
 
 		border: 1px solid var(--grey-base);
 		border-radius: 10px;
-		padding: 10px 15px;
+		padding: 15px;
 		background-color: transparent;
 
 		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -66,11 +62,11 @@
 		padding: 10px 14px;
 		font-size: 1.2em;
 		font-weight: 600;
-		font-family: inherit;
+		font-family: 'Onest', sans-serif;
 		outline: none;
 		border: none;
 		/* border-radius: 5px; */
-		background-color: #fff;
+		background-color: #1f75fe0d;
 		color: #333;
 		width: 100%;
 		appearance: none; /* removes default styling (Chrome, Safari) */

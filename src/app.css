@@ -54,17 +54,18 @@ input:not(:last-child) {
 	margin-bottom: 24px;
 }
 
+table,
 tbody {
 	text-align: center;
 	font-size: 1.2em;
 	font-weight: 500;
+	font-family: inherit;
 	color: var(--text-color-light);
 }
 
 td,
 th {
-	padding: 25px 10px;
-	padding-bottom: 5px;
+	padding: 25px 5px;
 	text-align: left;
 }
 

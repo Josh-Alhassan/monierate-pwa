@@ -1,4 +1,3 @@
-<!-- SpreadFigure.svelte -->
 <script>
 	export let value = ''; // Accepts number or string
 </script>
@@ -14,6 +13,6 @@
 
 		color: #e31d1c;
 		font-weight: 500;
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 </style>
