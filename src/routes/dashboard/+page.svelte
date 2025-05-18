@@ -4,13 +4,13 @@
 
 	// Tabs Import
 	import SellTab from '../../components/SellTab.svelte';
-	import SellTableProvider from '../../components/SellTableProvider.svelte';
+	import TableProvider from '../../components/TableProvider.svelte';
 	import BuyTab from '../../components/BuyTab.svelte';
 	import ProviderTable from '../../components/ProviderTable.svelte';
 	import SendTab from '../../components/SendTab.svelte';
 	import SwapTab from '../../components/SwapTab.svelte';
 	import NavigationalRoutes from '../../components/NavigationalRoutes.svelte';
-	import Currency from '../../utilities/Currency.svelte';
+	// import Currency from '../../utilities/Currency.svelte';
 
 	let activeTab = 'Sell';
 
@@ -42,22 +42,22 @@
 		<!-- Sell Form -->
 		<SellTab />
 		<!-- Provider Table -->
-		<SellTableProvider />
+		<TableProvider />
 	{:else if activeTab === 'Buy'}
 		<!-- Buy Form -->
 		<BuyTab />
 		<!-- Provider Table -->
-		<ProviderTable />
+		<TableProvider />
 	{:else if activeTab === 'Send'}
 		<!-- Send Form -->
 		<SendTab />
 		<!-- Provider Table -->
-		<ProviderTable />
+		<TableProvider />
 	{:else if activeTab === 'Swap'}
 		<!-- Swap Form -->
 		<SwapTab />
 		<!-- Provider Table -->
-		<ProviderTable />
+		<TableProvider />
 	{/if}
 
 	<!-- Navigation Routes -->

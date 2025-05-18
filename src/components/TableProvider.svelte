@@ -7,6 +7,9 @@
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
 	import SpreadFigure from '../utilities/SpreadFigure.svelte';
+	import rightArrow from '../assets/rightArrow.png';
+	import RightChevronIcon from '../utilities/RightChevronIcon.svelte';
+	import ArrowLink from '../utilities/ArrowLink.svelte';
 
 	let currencies = ['$', '£', '€', '₿'];
 	let selected = '$';
@@ -45,6 +48,9 @@
 				<td>
 					<SpreadFigure value="-₦5" />
 				</td>
+				<td>
+					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+				</td>
 			</tr>
 			<tr>
 				<td>2</td>
@@ -52,6 +58,9 @@
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦15" />
+				</td>
+				<td>
+					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
 				</td>
 			</tr>
 			<tr>
@@ -61,6 +70,9 @@
 				<td>
 					<SpreadFigure value="-₦45" />
 				</td>
+				<td>
+					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+				</td>
 			</tr>
 			<tr>
 				<td>4</td>
@@ -69,6 +81,9 @@
 				<td>
 					<SpreadFigure value="-₦65" />
 				</td>
+				<td>
+					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+				</td>
 			</tr>
 			<tr>
 				<td>5</td>
@@ -76,6 +91,9 @@
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦200" />
+				</td>
+				<td>
+					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
 				</td>
 			</tr>
 		</tbody>
@@ -94,8 +112,6 @@
 
 	.first-data {
 		text-align: left;
-		/* padding-left: 3em; */
-
 		display: flex;
 		align-items: center;
 		gap: 6px;
