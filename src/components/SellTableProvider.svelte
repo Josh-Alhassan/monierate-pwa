@@ -6,6 +6,7 @@
 	import Currency from '../utilities/Currency.svelte';
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
+	import SpreadFigure from '../utilities/SpreadFigure.svelte';
 
 	let currencies = ['$', '£', '€', '₿'];
 	let selected = '$';
@@ -33,6 +34,7 @@
 				<th>Name</th>
 				<th>Sell Price</th>
 				<th>Spread</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,31 +42,41 @@
 				<td>1</td>
 				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
 				<td>N2,800.28/$1</td>
-				<td>N200</td></tr
-			>
+				<td>
+					<SpreadFigure value="-₦5" />
+				</td>
+			</tr>
 			<tr>
 				<td>2</td>
 				<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
 				<td>N2,800.28/$1</td>
-				<td>N45</td>
+				<td>
+					<SpreadFigure value="-₦15" />
+				</td>
 			</tr>
 			<tr>
 				<td>3</td>
 				<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
 				<td>N2,800.28/$1</td>
-				<td>N45</td>
+				<td>
+					<SpreadFigure value="-₦45" />
+				</td>
 			</tr>
 			<tr>
 				<td>4</td>
 				<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
 				<td>N2,800.28/$1</td>
-				<td>N45</td>
+				<td>
+					<SpreadFigure value="-₦65" />
+				</td>
 			</tr>
 			<tr>
 				<td>5</td>
 				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
 				<td>N2,800.28/$1</td>
-				<td>N45</td>
+				<td>
+					<SpreadFigure value="-₦200" />
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -82,7 +94,7 @@
 
 	.first-data {
 		text-align: left;
-		padding-left: 3em;
+		/* padding-left: 3em; */
 
 		display: flex;
 		align-items: center;

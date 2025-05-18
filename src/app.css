@@ -65,6 +65,7 @@ td,
 th {
 	padding: 25px 10px;
 	padding-bottom: 5px;
+	text-align: left;
 }
 
 .section {
