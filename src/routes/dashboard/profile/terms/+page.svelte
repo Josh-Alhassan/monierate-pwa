@@ -1,8 +1,10 @@
 <script>
+	import NavHeader from '../../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../../utilities/TitleLabel.svelte';
 </script>
 
 <section class="section">
+	<NavHeader backHref="/dashboard/profile" notificationCount={2} />
 	<TitleLabel text="Terms and Condition" />
 
 	<p class="terms-info">
@@ -21,7 +23,7 @@
 
 <style>
 	.terms-info {
-		font-size: 1.2em;
+		font-size: 1.4em;
 		margin-top: 38px;
 		color: var(--text-color-light);
 	}

@@ -1,8 +1,8 @@
-<script>
+<!-- <script>
 	import { page } from '$app/stores';
 	import HomeIcon from '../utilities/HomeIcon.svelte';
-	import WalletIcon from '../utilities/WalletIcon.svelte';
 	import ProfileIcon from '../utilities/ProfileIcon.svelte';
+	import WalletIcon from '../utilities/WalletIcon.svelte';
 
 	const navItems = [
 		{
@@ -43,11 +43,7 @@
 			class:active={isActive(item)}
 			aria-current={isActive(item) ? 'page' : undefined}
 		>
-			<svelte:component
-				this={item.icon}
-				{...item.iconProps}
-				fill={isActive(item) ? '#FFFFFF' : '#B8B9B9'}
-			/>
+			<svelte:component this={item} color={isActive(item) ? '#007bff' : '#B8B9B9'} />
 			<span class="nav-label">{item.label}</span>
 		</a>
 	{/each}
@@ -89,4 +85,4 @@
 		color: var(--text-color-white);
 		padding: 10px 35px;
 	}
-</style>
+</style> -->

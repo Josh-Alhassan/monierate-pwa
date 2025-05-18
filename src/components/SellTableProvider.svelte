@@ -3,9 +3,28 @@
 	import bitnob from '../assets/bitnob.png';
 	import cedarMoney from '../assets/cedermoney.png';
 	import beansapp from '../assets/beansapp.png';
+	import Currency from '../utilities/Currency.svelte';
+	import LabelTag from '../utilities/LabelTag.svelte';
+	import ClockIcon from '../utilities/ClockIcon.svelte';
+
+	let currencies = ['$', '£', '€', '₿'];
+	let selected = '$';
+
+	const handleSelect = (val) => {
+		selected = val;
+	};
 </script>
 
 <div class="select-provider">
+	<!-- Currencies -->
+	<div class="currencies-wrap">
+		<div class="currencies">
+			{#each currencies as currency}
+				<Currency value={currency} active={selected === currency} onSelect={handleSelect} />
+			{/each}
+		</div>
+		<LabelTag text="12mins ago" icon={ClockIcon} />
+	</div>
 	<label for="provider">Select Provider</label>
 	<table class="provider-trade-infos">
 		<thead>
@@ -68,5 +87,11 @@
 		display: flex;
 		align-items: center;
 		gap: 6px;
+	}
+
+	.currencies-wrap {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 16px;
 	}
 </style>

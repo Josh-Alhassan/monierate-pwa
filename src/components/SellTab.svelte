@@ -1,3 +1,7 @@
+<script>
+	import Currency from '../utilities/Currency.svelte';
+</script>
+
 <div class="tab-section">
 	<form>
 		<label for="sell-amount">Amount to sell (fiat)</label>

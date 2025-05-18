@@ -10,6 +10,7 @@
 	import SendTab from '../../components/SendTab.svelte';
 	import SwapTab from '../../components/SwapTab.svelte';
 	import NavigationalRoutes from '../../components/NavigationalRoutes.svelte';
+	import Currency from '../../utilities/Currency.svelte';
 
 	let activeTab = 'Sell';
 

@@ -74,3 +74,8 @@ th {
 .input-container {
 	margin-top: 4.1em;
 }
+
+.currencies {
+	display: flex;
+	gap: 6px;
+}

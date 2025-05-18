@@ -12,6 +12,7 @@
 	import exchangeRateTracker from '../../../assets/exchange-rate-tracker.svg';
 	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
 	import NavHeader from '../../../utilities/NavHeader.svelte';
+	import LabelTag from '../../../utilities/LabelTag.svelte';
 
 	let selected = 'Dollar';
 
@@ -65,7 +66,8 @@
 		<div class="currency-conversion">
 			<div>
 				<h2 class="conversion">NGN to USD:</h2>
-				<span class="label">GT Bank Rate today</span>
+				<!-- <span class="label">GT Bank Rate today</span> -->
+				<LabelTag text="GT Bank Rate today" />
 			</div>
 
 			<h2 class="rate">₦1500</h2>
@@ -213,7 +215,7 @@
 		line-height: 18px;
 	}
 
-	.label {
+	/* .label {
 		color: var(--green-color);
 		background-color: var(--green-color-bg);
 		padding: 4px 5px;
@@ -221,7 +223,7 @@
 		margin-top: 5px;
 
 		display: inline-block;
-	}
+	} */
 
 	.rate {
 		font-weight: 700;
