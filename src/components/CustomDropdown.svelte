@@ -14,16 +14,6 @@
 		onSelect(option);
 		showOptions = false;
 	};
-
-	// Close dropdown on outside click
-	const handleClickOutside = (event) => {
-		if (!event.target.closest('.custom-dropdown')) {
-			showOptions = false;
-		}
-	};
-
-	// Listen for outside clicks
-	window.addEventListener('click', handleClickOutside);
 </script>
 
 <div class="custom-dropdown">
