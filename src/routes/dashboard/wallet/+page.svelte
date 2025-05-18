@@ -4,5 +4,5 @@
 
 <section class="section">
 	<h1>Wallet</h1>
+	<NavigationalRoutes />
 </section>
-<NavigationalRoutes />

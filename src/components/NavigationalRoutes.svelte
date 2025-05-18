@@ -54,6 +54,10 @@
 		color: inherit;
 	}
 
+	.nav-route span {
+		font-size: 1.2em;
+	}
+
 	.bx {
 		font-size: 3em;
 		color: #b8b9b9;
