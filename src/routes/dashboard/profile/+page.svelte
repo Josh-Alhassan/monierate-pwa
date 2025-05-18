@@ -64,7 +64,7 @@
 					leftIcon={bell}
 					label="Notifications"
 					rightIcon={arrRight}
-					urlPath="/dashboard/profile/xyz"
+					urlPath="/dashboard/profile/notification"
 				/>
 
 				<ProfileLabel
