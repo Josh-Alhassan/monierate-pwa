@@ -1,5 +1,4 @@
 <script>
-	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
 	import NavHeader from '../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../utilities/TitleLabel.svelte';
 
@@ -12,6 +11,7 @@
 	import faq from '../../../assets/faq-icon.svg';
 	import bell from '../../../assets/bell-icon.svg';
 	import file from '../../../assets/contract-icon.svg';
+	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
 </script>
 
 <section class="profile-section">
@@ -68,10 +68,10 @@
 				/>
 
 				<ProfileLabel
-					leftIcon={keyIcon}
+					leftIcon={helpCenter}
 					label="Language"
 					rightIcon={arrRight}
-					urlPath="/dashboard/profile/xyz"
+					urlPath="/dashboard/profile/language"
 				/>
 			</div>
 		</div>

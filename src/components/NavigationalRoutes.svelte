@@ -1,7 +1,7 @@
 <script>
 	// Array of navigation items
 	const navItems = [
-		{ href: '/dashboard', icon: 'bx-home-circle', label: 'Dashboard' },
+		{ href: '/dashboard', icon: 'bx-home-circle', label: 'Home' },
 		{ href: '/dashboard/wallet', icon: 'bx-wallet-cards', label: 'Wallet' },
 		{ href: '/dashboard/profile', icon: 'bx-user-square', label: 'Profile' }
 	];
@@ -19,37 +19,39 @@
 	{#each navItems as { href, icon, label }}
 		<a {href} class="nav-route" aria-label={label} on:click={() => setActive(href)}>
 			<i class={`bx ${icon} ${href === activeRoute ? 'active' : ''}`}></i>
+			<span>{label}</span>
 		</a>
 	{/each}
 </div>
 
 <style>
 	@import '../assets/free/fonts/basic/boxicons.css';
-
 	.nav-routes {
-		position: fixed;
+		position: relative;
 		bottom: 0;
 		left: 0;
-		max-width: 425px;
-		width: 100%;
-		transform: translate(161%, 10%);
+		width: 380px;
+		transform: translate(0%, 10%);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #fff;
-		/* box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05); */
-		padding: 0.5rem 0;
+		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 		z-index: 100;
 	}
 
 	.nav-route {
 		width: 100%;
-		padding: 32px 0 0;
-		display: block;
+		padding: 20px 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 		background-color: #fff;
 		margin-bottom: 5px;
 		text-align: center;
 		cursor: pointer;
+
+		text-decoration: none;
+		color: inherit;
 	}
 
 	.bx {
@@ -60,7 +62,9 @@
 	}
 
 	.bx.active,
-	.bx:hover {
+	.bx:hover,
+	.nav-route:hover,
+	.nav-route.active {
 		color: var(--primary-color);
 	}
 </style>
