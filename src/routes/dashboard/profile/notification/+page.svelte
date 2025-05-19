@@ -1,5 +1,6 @@
 <script>
 	import Notify from '../../../../components/Notify.svelte';
+	import NavHeader from '../../../../utilities/NavHeader.svelte';
 	import TitleLabel from '../../../../utilities/TitleLabel.svelte';
 
 	const notifications = [
@@ -49,6 +50,7 @@
 </script>
 
 <section class="section">
+	<NavHeader backHref="/dashboard/profile" notificationCount={3} />
 	<TitleLabel text="Notification" level="h2" />
 
 	<div class="notify-container">

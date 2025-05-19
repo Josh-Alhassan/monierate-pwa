@@ -15,7 +15,13 @@
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="notification-container" on:click={handleClick} type="button" aria-label="Notifications">
+<a
+	href="/dashboard/profile/notification"
+	class="notification-container"
+	on:click={handleClick}
+	type="button"
+	aria-label="Notifications"
+>
 	<div class="notification">
 		{#if showCount && count > 0}
 			<div class="notification-count">
@@ -24,7 +30,7 @@
 		{/if}
 		<NotificationIcon />
 	</div>
-</div>
+</a>
 
 <style>
 	.notification-container {

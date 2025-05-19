@@ -25,20 +25,6 @@
 	{/if}
 </article>
 
-<!-- <style>
-	.notify {
-		background-color: var(--secondary-color);
-		padding: 1em 2em;
-		border-radius: 5px;
-		font-size: 1.2em;
-		color: var(--text-color-dark);
-	}
-
-	.notify:not(:last-child) {
-		margin-bottom: 1em;
-	}
-</style> -->
-
 <style>
 	.notify {
 		padding: 1em 1.5em;
