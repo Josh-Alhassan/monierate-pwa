@@ -1,5 +1,4 @@
 <script>
-	// Coins Images
 	import bitnob from '../assets/bitnob.png';
 	import cedarMoney from '../assets/cedermoney.png';
 	import beansapp from '../assets/beansapp.png';
@@ -16,10 +15,27 @@
 	const handleSelect = (val) => {
 		selected = val;
 	};
+
+	const providerData = {
+		$: [
+			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦2,800.28/$1', spread: '-₦5' },
+			{ id: 2, name: 'Cedarmoney', logo: cedarMoney, price: '₦2,790.00/$1', spread: '-₦15' },
+			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
+		],
+		'£': [
+			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦3,500.00/£1', spread: '-₦10' },
+			{ id: 2, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' }
+		],
+		'€': [
+			{ id: 1, name: 'Cedarmoney', logo: cedarMoney, price: '₦3,200.00/€1', spread: '-₦20' },
+			{ id: 2, name: 'Beansapp', logo: beansapp, price: '₦3,150.00/€1', spread: '-₦40' }
+		],
+		'₿': [{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦42,000,000/₿1', spread: '-₦500,000' }]
+	};
 </script>
 
 <div class="select-provider">
-	<!-- Currencies -->
+	<!-- Currency Switcher -->
 	<div class="currencies-wrap">
 		<div class="currencies">
 			{#each currencies as currency}
@@ -29,6 +45,7 @@
 		<LabelTag text="12mins ago" icon={ClockIcon} />
 	</div>
 
+	<!-- Table -->
 	<table class="provider-trade-infos">
 		<thead>
 			<tr>
@@ -40,73 +57,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td class="first-data">
-					<a href="/dashboard/provider"> <img src={bitnob} alt="Bitnob" /> Bitnobe</a></td
-				>
-				<td>N2,800.28/$1</td>
-				<td>
-					<SpreadFigure value="-₦5" />
-				</td>
-				<td>
-					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td class="first-data"
-					><a href="/dashboard/provider"
-						><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney
-					</a></td
-				>
-				<td>N2,800.28/$1</td>
-				<td>
-					<SpreadFigure value="-₦15" />
-				</td>
-				<td>
-					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-				</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td class="first-data">
-					<a href="/dashboard/profile"> <img src={beansapp} alt="Beansapp" /> Beansapp </a>
-				</td>
-				<td>N2,800.28/$1</td>
-				<td>
-					<SpreadFigure value="-₦45" />
-				</td>
-				<td>
-					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-				</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td class="first-data">
-					<a href="/dashboard/profile"> <img src={bitnob} alt="Bitnob" /> Bitnob </a>
-				</td>
-				<td>N2,800.28/$1</td>
-				<td>
-					<SpreadFigure value="-₦65" />
-				</td>
-				<td>
-					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-				</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td class="first-data">
-					<a href="/dashboard/profile"> <img src={bitnob} alt="Bitnob" /> Bitnob </a></td
-				>
-				<td>N2,800.28/$1</td>
-				<td>
-					<SpreadFigure value="-₦200" />
-				</td>
-				<td>
-					<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-				</td>
-			</tr>
+			{#each providerData[selected] as provider}
+				<tr>
+					<td>{provider.id}</td>
+					<td class="first-data">
+						<a href="/dashboard/provider">
+							<img src={provider.logo} alt={provider.name} />
+							{provider.name}
+						</a>
+					</td>
+					<td>{provider.price}</td>
+					<td><SpreadFigure value={provider.spread} /></td>
+					<td>
+						<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+					</td>
+				</tr>
+			{/each}
 		</tbody>
 	</table>
 </div>
