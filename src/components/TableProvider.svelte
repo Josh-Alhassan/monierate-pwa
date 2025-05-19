@@ -1,6 +1,6 @@
 <script>
 	import bitnob from '../assets/bitnob.png';
-	import cedarMoney from '../assets/cedermoney.png';
+	import cedarMoney from '../assets/cedermoney.svg';
 	import beansapp from '../assets/beansapp.png';
 	import Currency from '../utilities/Currency.svelte';
 	import LabelTag from '../utilities/LabelTag.svelte';
