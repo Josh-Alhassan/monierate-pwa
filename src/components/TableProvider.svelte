@@ -1,7 +1,7 @@
 <script>
-	import bitnob from '../assets/bitnob.png';
+	import bitnob from '../assets/bitnob.svg';
 	import cedarMoney from '../assets/cedermoney.svg';
-	import beansapp from '../assets/beansapp.png';
+	import beansapp from '../assets/beansapp-svg.svg';
 	import Currency from '../utilities/Currency.svelte';
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
