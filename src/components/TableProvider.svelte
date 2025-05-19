@@ -8,7 +8,6 @@
 	import ClockIcon from '../utilities/ClockIcon.svelte';
 	import SpreadFigure from '../utilities/SpreadFigure.svelte';
 	import rightArrow from '../assets/rightArrow.png';
-	import RightChevronIcon from '../utilities/RightChevronIcon.svelte';
 	import ArrowLink from '../utilities/ArrowLink.svelte';
 
 	let currencies = ['$', '£', '€', '₿'];
@@ -43,7 +42,9 @@
 		<tbody>
 			<tr>
 				<td>1</td>
-				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnobe</td>
+				<td class="first-data">
+					<a href="/dashboard/provider"> <img src={bitnob} alt="Bitnob" /> Bitnobe</a></td
+				>
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦5" />
@@ -54,7 +55,11 @@
 			</tr>
 			<tr>
 				<td>2</td>
-				<td class="first-data"><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney</td>
+				<td class="first-data"
+					><a href="/dashboard/provider"
+						><img src={cedarMoney} alt="Cedarmoney" /> Cedarmoney
+					</a></td
+				>
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦15" />
@@ -65,7 +70,9 @@
 			</tr>
 			<tr>
 				<td>3</td>
-				<td class="first-data"> <img src={beansapp} alt="Beansapp" /> Beansapp</td>
+				<td class="first-data">
+					<a href="/dashboard/profile"> <img src={beansapp} alt="Beansapp" /> Beansapp </a>
+				</td>
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦45" />
@@ -76,7 +83,9 @@
 			</tr>
 			<tr>
 				<td>4</td>
-				<td class="first-data"><img src={bitnob} alt="Bitnob" /> Bitnob</td>
+				<td class="first-data">
+					<a href="/dashboard/profile"> <img src={bitnob} alt="Bitnob" /> Bitnob </a>
+				</td>
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦65" />
@@ -87,7 +96,9 @@
 			</tr>
 			<tr>
 				<td>5</td>
-				<td class="first-data"> <img src={bitnob} alt="Bitnob" /> Bitnob</td>
+				<td class="first-data">
+					<a href="/dashboard/profile"> <img src={bitnob} alt="Bitnob" /> Bitnob </a></td
+				>
 				<td>N2,800.28/$1</td>
 				<td>
 					<SpreadFigure value="-₦200" />
@@ -112,6 +123,11 @@
 
 	.first-data {
 		text-align: left;
+	}
+
+	.first-data a {
+		color: var(--text-color-dark);
+		text-decoration: none;
 	}
 
 	.first-data img {
