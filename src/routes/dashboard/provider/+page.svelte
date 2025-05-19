@@ -2,7 +2,7 @@
 	import Notification from '../../../components/Notification.svelte';
 
 	// Image Import
-	import gtbank from '../../../assets/gtbank.png';
+	import gtbank from '../../../assets/gtbank-svg.svg';
 	import conversion from '../../../assets/convert.png';
 
 	// Global CSS import
