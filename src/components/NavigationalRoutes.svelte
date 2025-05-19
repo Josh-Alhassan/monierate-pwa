@@ -30,8 +30,9 @@
 		position: relative;
 		bottom: 0;
 		left: 0;
-		width: 275px;
+		width: 370px;
 		transform: translate(0%, 10%);
+		background: orange;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
