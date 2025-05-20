@@ -28,7 +28,7 @@
 	@import '../assets/free/fonts/basic/boxicons.css';
 	.nav-routes {
 		position: fixed;
-		bottom: 0px;
+		bottom: -56px;
 		left: 50%;
 		width: 370px;
 		transform: translate(-50%, -50%);
@@ -37,11 +37,13 @@
 		align-items: center;
 		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 		z-index: 100;
+
+		padding: 10px;
 	}
 
 	.nav-route {
 		width: 100%;
-		padding: 20px 0 0;
+		padding: 5px;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
