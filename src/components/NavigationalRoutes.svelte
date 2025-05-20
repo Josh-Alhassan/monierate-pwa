@@ -27,11 +27,11 @@
 <style>
 	@import '../assets/free/fonts/basic/boxicons.css';
 	.nav-routes {
-		position: relative;
-		bottom: 0;
-		left: 0;
+		position: fixed;
+		bottom: 0px;
+		left: 50%;
 		width: 370px;
-		transform: translate(0%, 10%);
+		transform: translate(-50%, -50%);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
