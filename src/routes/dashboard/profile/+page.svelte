@@ -14,7 +14,7 @@
 	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
 </script>
 
-<section class="profile-section">
+<section class="profile-section section">
 	<NavHeader backHref="/dashboard" notificationCount={3} showNotification={true} />
 
 	<div class="account-section">
@@ -80,9 +80,9 @@
 </section>
 
 <style>
-	.profile-section {
+	/* .profile-section {
 		padding: 30px 22px;
-	}
+	} */
 
 	.account-section {
 		margin-top: 3.1em;

@@ -20,11 +20,22 @@
 		$: [
 			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦2,800.28/$1', spread: '-₦5' },
 			{ id: 2, name: 'Cedarmoney', logo: cedarMoney, price: '₦2,790.00/$1', spread: '-₦15' },
-			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
+			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 4, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 5, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 6, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 7, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 8, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 9, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 10, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 11, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
 		],
 		'£': [
 			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦3,500.00/£1', spread: '-₦10' },
-			{ id: 2, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' }
+			{ id: 2, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
+			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
+			{ id: 4, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
+			{ id: 5, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' }
 		],
 		'€': [
 			{ id: 1, name: 'Cedarmoney', logo: cedarMoney, price: '₦3,200.00/€1', spread: '-₦20' },
@@ -50,9 +61,9 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Provider</th>
-				<th>Sell Price</th>
-				<th>Spread</th>
+				<th class="provider">Provider</th>
+				<th class="sell">Sell Price</th>
+				<th class="spread">Spread</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -85,6 +96,11 @@
 	.provider-trade-infos {
 		width: 100%;
 		border-collapse: collapse;
+	}
+
+	.provider {
+		width: 94.5px;
+		padding-right: 0;
 	}
 
 	.first-data {

@@ -152,12 +152,12 @@
 	<table class="rate-table">
 		<thead class="rate-table-heading">
 			<tr>
-				<th>Provider</th>
+				<th class="provide-head">Provider</th>
 				<th>Buy</th>
 				<th>Sell</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="rate-providers">
 			{#each providers as provider}
 				<tr class="provider-data">
 					<td class="provider-name">
@@ -214,6 +214,15 @@
 
 	.rate-table-heading {
 		color: var(--text-color-light);
+	}
+
+	.rate-providers {
+		height: 365px;
+	}
+
+	.provide-head {
+		width: 163px;
+		padding-right: 0;
 	}
 
 	.provider-data {

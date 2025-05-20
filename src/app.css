@@ -63,11 +63,21 @@ input:not(:last-child) {
 
 table,
 tbody {
+	display: block;
 	text-align: center;
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
 	color: var(--text-color-light);
+}
+
+tr th {
+	padding-right: 2em;
+}
+
+tbody {
+	height: 200px;
+	overflow-y: scroll;
 }
 
 td,
@@ -82,6 +92,9 @@ tr {
 
 .section {
 	padding: 30px 22px;
+	/* padding-bottom: 70px; */
+
+	margin-bottom: 70px;
 }
 
 .input-container {
