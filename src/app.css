@@ -19,6 +19,15 @@
 	--green-color-bg: #e7f5ec;
 	--primary-color-bg-opacity: #1f75fe0d;
 	--inactive-btn: #d1d0d0;
+	--bg-color: #fff;
+	--notify-label: #000000;
+}
+
+.dark {
+	--bg-color: #000714;
+	--text-color-dark: #ffffff;
+	--notify-label: #000714;
+	--text-color-alt: #ffffff;
 }
 
 html {
@@ -31,6 +40,9 @@ body {
 	font-size: var(--base-font-size);
 
 	height: max-content;
+
+	background-color: var(--bg-color);
+	color: var(--text-color-dark);
 }
 
 label {

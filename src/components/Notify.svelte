@@ -19,7 +19,7 @@
 </script>
 
 <article class="notify" style="background-color: {bgColor};">
-	<p>{message}</p>
+	<p class="notify-detail">{message}</p>
 	{#if timestamp}
 		<small class="timestamp">{new Date(timestamp).toLocaleString()}</small>
 	{/if}
@@ -32,8 +32,12 @@
 		margin-bottom: 1rem;
 		font-size: 1em;
 		font-family: inherit;
-		color: var(--text-color-dark);
+
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	.notify-detail {
+		color: var(--notify-label);
 	}
 
 	.notify:not(:last-child) {

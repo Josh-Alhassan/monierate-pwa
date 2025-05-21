@@ -28,8 +28,9 @@
 		cursor: pointer;
 		padding: 12px 15px;
 		border: 0.5px solid #f2f2f2;
+		border-radius: 5px;
 
-		color: #000;
+		color: var(--text-color-dark);
 		text-decoration: none;
 	}
 

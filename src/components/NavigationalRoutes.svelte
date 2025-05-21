@@ -47,7 +47,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		background-color: #fff;
+		background-color: var(--bg-color);
 		margin-bottom: 5px;
 		text-align: center;
 		cursor: pointer;
