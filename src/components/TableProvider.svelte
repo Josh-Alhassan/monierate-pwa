@@ -79,7 +79,7 @@
 					</td>
 					<td>{provider.price}</td>
 					<td><SpreadFigure value={provider.spread} /></td>
-					<td>
+					<td class="arr-link">
 						<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
 					</td>
 				</tr>
@@ -123,5 +123,11 @@
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 16px;
+	}
+
+	.arr-link {
+		margin-left: 40px;
+		width: 59px;
+		display: inline-block;
 	}
 </style>

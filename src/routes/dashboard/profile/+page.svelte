@@ -107,7 +107,7 @@
 	.mode-toggle {
 		position: relative;
 		top: -50px;
-		right: -205px;
+		right: -310px;
 		display: inline-block;
 		font-size: 1.8em;
 		cursor: pointer;
