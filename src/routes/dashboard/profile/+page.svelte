@@ -12,16 +12,17 @@
 	import bell from '../../../assets/bell-icon.svg';
 	import file from '../../../assets/contract-icon.svg';
 	import NavigationalRoutes from '../../../components/NavigationalRoutes.svelte';
-	import darkmode from '../../../assets/free/svg/basic/bx-moon.svg';
-	import lightmode from '../../../assets/free/svg/basic/bx-sun-bright.svg';
+	// import darkmode from '../../../assets/free/svg/basic/bx-moon.svg';
+	// import lightmode from '../../../assets/free/svg/basic/bx-sun-bright.svg';
 
-	import { theme } from '../../../stores/theme.js';
+	// import { theme } from '../../../stores/theme.js';
+	import { currentTheme } from '../../../stores/theme.js';
 
-	let currentTheme;
-	theme.subscribe((value) => (currentTheme = value));
+	let themeValue;
+	currentTheme.subscribe((value) => (themeValue = value));
 
 	function toggleTheme() {
-		theme.set(currentTheme === 'dark' ? 'light' : 'dark');
+		currentTheme.set(themeValue === 'dark' ? 'light' : 'dark');
 	}
 </script>
 
@@ -30,13 +31,8 @@
 		<NavHeader backHref="/dashboard" notificationCount={3} showNotification={true} />
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<!-- <img
-			class="mode-toggle"
-			src={currentTheme === 'dark' ? lightmode : darkmode}
-			alt="light/dark mode toggle"
-			on:click={toggleTheme}
-		/> -->
-
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<!-- svelte-ignore element_invalid_self_closing_tag -->
 		<i
 			class="bx mode-toggle"
 			class:bx-moon={currentTheme !== 'dark'}

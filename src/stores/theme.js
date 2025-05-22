@@ -1,10 +1,17 @@
 import { writable } from 'svelte/store';
 
-const defaultTheme = localStorage.getItem('theme') || 'light';
-export const theme = writable(defaultTheme);
+// Check if code is running in the browser
+const isBrowser = typeof window !== 'undefined';
 
-// Sync with localStorage and HTML class
-theme.subscribe((value) => {
-	localStorage.setItem('theme', value);
-	document.documentElement.classList.toggle('dark', value === 'dark');
-});
+// Default to 'light' if not in browser
+const defaultTheme = isBrowser ? localStorage.getItem('theme') || 'light' : 'light';
+
+export const currentTheme = writable(defaultTheme);
+
+// Sync with localStorage and HTML class, only in browser
+if (isBrowser) {
+	currentTheme.subscribe((value) => {
+		localStorage.setItem('theme', value);
+		document.documentElement.classList.toggle('dark', value === 'dark');
+	});
+}

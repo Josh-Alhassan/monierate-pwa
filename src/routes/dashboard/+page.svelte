@@ -1,6 +1,8 @@
 <script>
 	import '../../app.css';
 	import Notification from '../../components/Notification.svelte';
+	import logo from '../../assets/logo_monierate.svg';
+	import logoWhite from '../../assets/logo_monierate-light.svg';
 
 	// Tabs Import
 	import SellTab from '../../components/SellTab.svelte';
@@ -10,6 +12,17 @@
 	import SwapTab from '../../components/SwapTab.svelte';
 	import NavigationalRoutes from '../../components/NavigationalRoutes.svelte';
 	// import Currency from '../../utilities/Currency.svelte';
+
+	import { currentTheme } from '../../stores/theme.js';
+	import { onDestroy } from 'svelte';
+	import { get } from 'svelte/store';
+
+	let theme = 'light';
+	const unsubscribe = currentTheme.subscribe((value) => (theme = value));
+
+	onDestroy(() => {
+		unsubscribe();
+	});
 
 	let activeTab = 'Sell';
 
@@ -21,7 +34,11 @@
 </script>
 
 <div class="dashboard-container">
-	<Notification count={5} />
+	<div class="nav-wrapper">
+		<img src={theme === 'dark' ? logoWhite : logo} alt="Monierate" class="monierate-logo" />
+
+		<Notification count={5} />
+	</div>
 
 	<!-- Tabs -->
 	<div class="trade-btns">
@@ -66,6 +83,17 @@
 <style>
 	.dashboard-container {
 		padding: 22px;
+	}
+
+	.nav-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.monierate-logo {
+		width: 54px;
+		height: auto;
 	}
 
 	.trade-btns {
