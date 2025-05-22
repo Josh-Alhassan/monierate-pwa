@@ -57,35 +57,37 @@
 	</div>
 
 	<!-- Table -->
-	<table class="provider-trade-infos">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th class="provider">Provider</th>
-				<th class="sell">Sell Price</th>
-				<th class="spread">Spread</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each providerData[selected] as provider}
+	<div class="table-wrapper">
+		<table class="provider-trade-infos">
+			<thead>
 				<tr>
-					<td>{provider.id}</td>
-					<td class="first-data">
-						<a href="/dashboard/provider">
-							<img src={provider.logo} alt={provider.name} />
-							{provider.name}
-						</a>
-					</td>
-					<td>{provider.price}</td>
-					<td><SpreadFigure value={provider.spread} /></td>
-					<td class="arr-link">
-						<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-					</td>
+					<th>#</th>
+					<th class="provider">Provider</th>
+					<th class="sell">Sell Price</th>
+					<th class="spread">Spread</th>
+					<th></th>
 				</tr>
-			{/each}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{#each providerData[selected] as provider}
+					<tr>
+						<td>{provider.id}</td>
+						<td class="first-data">
+							<a href="/dashboard/provider">
+								<img src={provider.logo} alt={provider.name} />
+								{provider.name}
+							</a>
+						</td>
+						<td>{provider.price}</td>
+						<td><SpreadFigure value={provider.spread} /></td>
+						<td class="arr-link">
+							<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+						</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <style>
@@ -129,5 +131,10 @@
 		margin-left: 40px;
 		width: 59px;
 		display: inline-block;
+	}
+
+	.table-wrapper {
+		max-height: 100%;
+		overflow-y: auto;
 	}
 </style>

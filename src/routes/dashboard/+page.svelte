@@ -14,7 +14,7 @@
 	// import Currency from '../../utilities/Currency.svelte';
 
 	import { currentTheme } from '../../stores/theme.js';
-	import { onDestroy } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { get } from 'svelte/store';
 
 	let theme = 'light';
@@ -31,6 +31,31 @@
 	function handleTabClick(tab) {
 		activeTab = tab;
 	}
+
+	// Table scroll logic
+	let isStickyTable = false;
+
+	function handleScroll() {
+		const tableEl = document.querySelector('.table-section');
+		if (!tableEl) return;
+
+		const rect = tableEl.getBoundingClientRect();
+		const threshold = 100;
+
+		if (rect.top <= threshold && !isStickyTable) {
+			isStickyTable = true;
+		} else if (rect.top > threshold && isStickyTable) {
+			isStickyTable = false;
+		}
+	}
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll);
+	});
+
+	onDestroy(() => {
+		window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
 <div class="dashboard-container">
@@ -58,7 +83,10 @@
 		<!-- Sell Form -->
 		<SellTab />
 		<!-- Provider Table -->
-		<TableProvider />
+		<!-- Table wrapper that will stretch full screen height on scroll -->
+		<div class="table-section" class:is-sticky-table={isStickyTable}>
+			<TableProvider />
+		</div>
 	{:else if activeTab === 'Buy'}
 		<!-- Buy Form -->
 		<BuyTab />
@@ -83,6 +111,12 @@
 <style>
 	.dashboard-container {
 		padding: 22px;
+		transition: opacity 0.3s ease;
+	}
+
+	.is-sticky-table + .dashboard-container {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.nav-wrapper {
@@ -121,5 +155,22 @@
 		background-color: var(--primary-color);
 		color: var(--text-color-white);
 		font-weight: 700;
+	}
+
+	/* Table scroll style logic */
+	.table-section {
+		transition: all 0.3s ease;
+	}
+
+	.is-sticky-table {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		background-color: var(--bg-color); /* Optional: set a full screen background */
+		z-index: 10;
+		overflow-y: auto;
+		padding: 20px; /* Optional: adjust based on layout */
 	}
 </style>

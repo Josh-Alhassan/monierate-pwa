@@ -217,7 +217,7 @@
 	}
 
 	.rate-providers {
-		height: 365px;
+		height: 100vh;
 	}
 
 	.provide-head {
