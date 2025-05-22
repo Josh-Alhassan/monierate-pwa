@@ -28,15 +28,17 @@
 
 <section class="profile-section section">
 	<div class="navheader-wrap">
-		<NavHeader backHref="/dashboard" notificationCount={3} showNotification={true} />
+		<div class="nav-heading">
+			<NavHeader backHref="/dashboard" notificationCount={3} showNotification={true} />
+		</div>
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<!-- svelte-ignore element_invalid_self_closing_tag -->
 		<i
 			class="bx mode-toggle"
-			class:bx-moon={currentTheme !== 'dark'}
-			class:bx-sun={currentTheme === 'dark'}
+			class:bx-moon={themeValue !== 'dark'}
+			class:bx-sun={themeValue === 'dark'}
 			on:click={toggleTheme}
 		/>
 	</div>
@@ -104,13 +106,16 @@
 </section>
 
 <style>
+	.navheader-wrap {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+	.nav-heading {
+		width: 90%;
+	}
 	.mode-toggle {
-		position: relative;
-		top: -50px;
-		right: -310px;
-		display: inline-block;
-		font-size: 1.8em;
-		cursor: pointer;
+		font-size: 16px;
 	}
 
 	.account-section {
