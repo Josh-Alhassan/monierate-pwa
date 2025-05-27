@@ -14,19 +14,6 @@
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
 
-	// const providers = [
-	// 	{ name: 'Nigeria Customs', logo: customs, buy: '₦1599', sell: '₦1599' },
-	// 	{ name: 'CBN', logo: cbnIcon, buy: '₦1600', sell: '₦1599' },
-	// 	{ name: 'Paypal', logo: paypal, buy: '₦1602', sell: '-' },
-	// 	{ name: 'Cambridge Currencies', logo: cambridge, buy: '₦1606', sell: '₦1598' },
-	// 	{ name: 'Cedar.money', logo: cedarMoney, buy: '₦1606', sell: '-' },
-	// 	{ name: 'Beans App', logo: beansApp, buy: '₦1614', sell: '₦1599' },
-	// 	{ name: 'DigiOats', logo: digioats, buy: '₦1614', sell: '₦1634' },
-	// 	{ name: 'Bybit', logo: bybit, buy: '₦1614', sell: '₦1615' },
-	// 	{ name: 'Quidax', logo: quidax, buy: '₦1615', sell: '₦1614' },
-	// 	{ name: 'GT Bank', logo: gtbank, buy: '₦1618', sell: '₦1550' }
-	// ];
-
 	const providers = [
 		{
 			name: 'Nigeria Customs',
@@ -246,15 +233,6 @@
 						{/if}
 						{provider.name}
 					</td>
-					<!-- <td class="provider-buy">{provider.buy} <span class="per">per $1</span></td>
-					<td class="provider-sell">{provider.sell} <span class="per">per $1</span></td> -->
-
-					<!-- <td class="provider-buy">
-						₦{provider.rates[selected].buy} <span class="per">per {selected}1</span>
-					</td>
-					<td class="provider-sell">
-						₦{provider.rates[selected].sell} <span class="per">per {selected}1</span>
-					</td> -->
 
 					<td class="provider-buy">
 						{#if provider.rates[selected].buy !== '-'}

@@ -73,6 +73,10 @@ input:not(:last-child) {
 	margin-bottom: 24px;
 }
 
+table {
+	width: 100%;
+}
+
 table,
 tbody {
 	display: block;
@@ -83,13 +87,20 @@ tbody {
 	color: var(--text-color-light);
 }
 
+thead {
+	/* background-color: red; */
+}
+
 tr th {
 	padding-right: 2em;
+	text-align: left;
 }
 
 tbody {
 	height: 80vh;
 	margin-bottom: 20px;
+
+	/* background: orange; */
 }
 
 td,

@@ -70,36 +70,25 @@
 	</div>
 
 	<!-- Table -->
-	<div class="table-wrapper">
-		<table class="provider-trade-infos">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th class="provider">Provider</th>
-					<th class="sell">Sell Price</th>
-					<th class="spread">Spread</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each providerData[selected] as provider}
-					<tr>
-						<td>{provider.id}</td>
-						<td class="first-data">
-							<a href="/dashboard/provider">
-								<img src={provider.logo} alt={provider.name} />
-								{provider.name}
-							</a>
-						</td>
-						<td>{provider.price}</td>
-						<td><SpreadFigure value={provider.spread} /></td>
-						<td class="arr-link">
-							<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
+	<div class="provider-grid">
+		<!-- Header -->
+		<div class="grid-header">Provider</div>
+		<div class="grid-header">Sell Price</div>
+		<div class="grid-header">Spread</div>
+		<div class="grid-header"></div>
+
+		<!-- Rows -->
+		{#each providerData[selected] as provider}
+			<div class="grid-cell provider-info">
+				<img src={provider.logo} alt={provider.name} class="logo" />
+				<span>{provider.name}</span>
+			</div>
+			<div class="grid-cell">{provider.price}</div>
+			<div class="grid-cell"><SpreadFigure value={provider.spread} /></div>
+			<div class="grid-cell">
+				<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+			</div>
+		{/each}
 	</div>
 </div>
 
@@ -108,46 +97,36 @@
 		margin-top: 50px;
 	}
 
-	.provider-trade-infos {
-		width: 100%;
-		border-collapse: collapse;
+	.provider-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr auto;
+		gap: 8px;
+		align-items: center;
+		font-size: 14px;
+		margin-bottom: 100px;
 	}
 
-	.provider {
-		width: 94.5px;
-		padding-right: 0;
+	/* Header styling */
+	.grid-header {
+		font-weight: bold;
+		color: #555;
+		padding: 8px 0;
 	}
 
-	.first-data {
-		text-align: left;
+	/* Cell styling */
+	.grid-cell {
+		padding: 6px 0;
+		color: #333;
 	}
 
-	.first-data a {
-		color: var(--text-color-dark);
-		text-decoration: none;
-	}
-
-	.first-data img {
-		width: 15px;
-		display: inline-block;
-		margin-bottom: -4px;
-		margin-right: 6px;
-	}
-
-	.currencies-wrap {
+	.provider-info {
 		display: flex;
-		justify-content: space-between;
-		margin-bottom: 16px;
+		align-items: center;
+		gap: 8px;
 	}
 
-	.arr-link {
-		margin-left: 40px;
-		width: 59px;
-		display: inline-block;
-	}
-
-	.table-wrapper {
-		max-height: 100%;
-		overflow-y: auto;
+	.logo {
+		width: 18px;
+		height: 18px;
 	}
 </style>

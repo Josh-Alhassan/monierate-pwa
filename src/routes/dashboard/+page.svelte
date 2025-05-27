@@ -158,8 +158,6 @@
 
 	/* Table scroll style logic */
 	.table-section {
-		/* background-color: orange; */
-		overflow: scroll;
 		transition: all 0.3s ease;
 	}
 
@@ -172,6 +170,6 @@
 		/* background-color: orange; */
 		/* z-index: 10; */
 		overflow-y: auto;
-		padding: 20px;
+		padding: 5px;
 	}
 </style>
