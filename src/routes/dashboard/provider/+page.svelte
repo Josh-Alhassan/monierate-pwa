@@ -3,7 +3,7 @@
 
 	// Image Import
 	import gtbank from '../../../assets/gtbank-svg.svg';
-	import conversion from '../../../assets/convert.png';
+	import conversion from '../../../assets/loader.svg';
 
 	// Global CSS import
 	import '../../../app.css';
@@ -17,6 +17,28 @@
 	let selected = 'Dollar';
 
 	const options = ['Dollar', 'Pounds', 'Euros'];
+
+	let selectedCurrency = ' ';
+
+	const exchangeRates = {
+		Dollar: 1500,
+		Pounds: 1800,
+		Euros: 1600
+	};
+
+	const selectExchangeRates = {
+		usd: '₦1500',
+		eur: '₦1600',
+		gbp: '₦1800'
+	};
+
+	// Current Rate based on selected currency
+	$: currentRate = exchangeRates[selected];
+
+	// Conversion Rate based on selected currency
+	$: conversionRate = selectedCurrency ? selectExchangeRates[selectedCurrency] : null;
+
+	// $: conversionRate = selectExchangeRates[selectedCurrency];
 
 	function handleToggle(option) {
 		selected = option;
@@ -70,7 +92,7 @@
 				<LabelTag text="GT Bank Rate today" />
 			</div>
 
-			<h2 class="rate">₦1500</h2>
+			<h2 class="rate">₦{currentRate}</h2>
 		</div>
 
 		<!-- Currency Converter -->
@@ -81,8 +103,11 @@
 				<div>
 					<label for="currency">Amount to Convert</label>
 					<div class="trade-container">
-						<select id="currency" class="currency-select" required>
-							<option class="select-option" value="usd">USD - US Dollar</option>
+						<select id="currency" class="currency-select" bind:value={selectedCurrency} required>
+							<option class="select-option" value="" disabled selected hidden
+								>Select a currency
+							</option>
+							<option class="select-option" value="usd"> USD - US Dollar</option>
 							<option class="select-option" value="eur">EUR - Euros</option>
 							<option class="select-option" value="gbp">GBP - Pounds</option>
 						</select>
@@ -95,13 +120,18 @@
 							required
 						/>
 					</div>
+					<!-- Display current rate -->
+					{#if selectedCurrency}
+						<p class="rate">{conversionRate}</p>
+					{/if}
 				</div>
 				<img src={conversion} alt="loading" class="conversion-img" />
 				<div>
 					<label for="currency">Converting to</label>
 					<div class="trade-container">
 						<select id="currency" class="currency-select" required>
-							<option class="select-option" value="usd"> NGN - NG Naira </option>
+							<option class="select-option" value=""> </option>
+							<option class="select-option" value="usd"> 🤑 - US Dollars </option>
 							<option class="select-option" value="eur">EUR - Euros</option>
 							<option class="select-option" value="gbp">GBP - Pounds</option>
 						</select>
@@ -229,6 +259,12 @@
 		font-weight: 700;
 		font-size: 2.4em;
 		line-height: 18px;
+	}
+
+	.rate-label {
+		font-size: 1.4em;
+		color: var(--text-color-light);
+		margin-top: 5px;
 	}
 
 	.converter-section {

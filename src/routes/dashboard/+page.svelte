@@ -4,57 +4,49 @@
 	import logo from '../../assets/logo_monierate.svg';
 	import logoWhite from '../../assets/logo_monierate-light.svg';
 
-	// Tabs Import
 	import SellTab from '../../components/SellTab.svelte';
 	import TableProvider from '../../components/TableProvider.svelte';
 	import BuyTab from '../../components/BuyTab.svelte';
 	import SendTab from '../../components/SendTab.svelte';
 	import SwapTab from '../../components/SwapTab.svelte';
 	import NavigationalRoutes from '../../components/NavigationalRoutes.svelte';
-	// import Currency from '../../utilities/Currency.svelte';
 
 	import { currentTheme } from '../../stores/theme.js';
 	import { onMount, onDestroy } from 'svelte';
-	import { get } from 'svelte/store';
 
 	let theme = 'light';
-	const unsubscribe = currentTheme.subscribe((value) => (theme = value));
-
-	onDestroy(() => {
-		unsubscribe();
-	});
-
+	let isStickyTable = false;
 	let activeTab = 'Sell';
-
 	const tabs = ['Sell', 'Buy', 'Send', 'Swap'];
+
+	const unsubscribe = currentTheme.subscribe((value) => (theme = value));
+	onDestroy(() => unsubscribe());
 
 	function handleTabClick(tab) {
 		activeTab = tab;
 	}
 
-	// Table scroll logic
-	let isStickyTable = false;
-
-	function handleScroll() {
-		const tableEl = document.querySelector('.table-section');
-		if (!tableEl) return;
-
-		const rect = tableEl.getBoundingClientRect();
-		const threshold = 100;
-
-		if (rect.top <= threshold && !isStickyTable) {
-			isStickyTable = true;
-		} else if (rect.top > threshold && isStickyTable) {
-			isStickyTable = false;
-		}
-	}
-
+	// Only use `window` inside onMount
 	onMount(() => {
-		window.addEventListener('scroll', handleScroll);
-	});
+		const handleScroll = () => {
+			const tableEl = document.querySelector('.table-section');
+			if (!tableEl) return;
 
-	onDestroy(() => {
-		window.removeEventListener('scroll', handleScroll);
+			const rect = tableEl.getBoundingClientRect();
+			const threshold = 100;
+
+			if (rect.top <= threshold && !isStickyTable) {
+				isStickyTable = true;
+			} else if (rect.top > threshold && isStickyTable) {
+				isStickyTable = false;
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		onDestroy(() => {
+			window.removeEventListener('scroll', handleScroll);
+		});
 	});
 </script>
 
@@ -168,9 +160,9 @@
 		left: 0;
 		right: 0;
 		height: 100vh;
-		background-color: var(--bg-color); /* Optional: set a full screen background */
+		background-color: var(--bg-color);
 		z-index: 10;
 		overflow-y: auto;
-		padding: 20px; /* Optional: adjust based on layout */
+		padding: 20px;
 	}
 </style>
