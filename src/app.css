@@ -88,9 +88,8 @@ tr th {
 }
 
 tbody {
-	height: 100vh;
+	height: 80vh;
 	margin-bottom: 20px;
-	overflow-y: scroll;
 }
 
 td,

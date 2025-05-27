@@ -127,6 +127,86 @@
 				'€': { buy: 1935, sell: 1850 },
 				'₿': { buy: 62700000, sell: 60000000 }
 			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
+		},
+		{
+			name: 'GT Bank',
+			logo: gtbank,
+			rates: {
+				$: { buy: 1618, sell: 1550 },
+				'£': { buy: 2070, sell: 1985 },
+				'€': { buy: 1935, sell: 1850 },
+				'₿': { buy: 62700000, sell: 60000000 }
+			}
 		}
 	];
 
@@ -217,7 +297,8 @@
 	}
 
 	.rate-providers {
-		height: 100vh;
+		height: 80vh;
+		overflow-y: auto;
 	}
 
 	.provide-head {

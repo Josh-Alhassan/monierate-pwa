@@ -33,7 +33,7 @@
 			if (!tableEl) return;
 
 			const rect = tableEl.getBoundingClientRect();
-			const threshold = 100;
+			const threshold = 50;
 
 			if (rect.top <= threshold && !isStickyTable) {
 				isStickyTable = true;
@@ -83,17 +83,23 @@
 		<!-- Buy Form -->
 		<BuyTab />
 		<!-- Provider Table -->
-		<TableProvider />
+		<div class="table-section" class:is-sticky-table={isStickyTable}>
+			<TableProvider />
+		</div>
 	{:else if activeTab === 'Send'}
 		<!-- Send Form -->
 		<SendTab />
 		<!-- Provider Table -->
-		<TableProvider />
+		<div class="table-section" class:is-sticky-table={isStickyTable}>
+			<TableProvider />
+		</div>
 	{:else if activeTab === 'Swap'}
 		<!-- Swap Form -->
 		<SwapTab />
 		<!-- Provider Table -->
-		<TableProvider />
+		<div class="table-section" class:is-sticky-table={isStickyTable}>
+			<TableProvider />
+		</div>
 	{/if}
 
 	<!-- Navigation Routes -->
@@ -104,6 +110,7 @@
 	.dashboard-container {
 		padding: 22px;
 		transition: opacity 0.3s ease;
+		position: relative;
 	}
 
 	.is-sticky-table + .dashboard-container {
@@ -151,17 +158,19 @@
 
 	/* Table scroll style logic */
 	.table-section {
+		/* background-color: orange; */
+		overflow: scroll;
 		transition: all 0.3s ease;
 	}
 
 	.is-sticky-table {
-		position: fixed;
+		/* position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 100vh;
-		background-color: var(--bg-color);
-		z-index: 10;
+		height: 100vh; */
+		/* background-color: orange; */
+		/* z-index: 10; */
 		overflow-y: auto;
 		padding: 20px;
 	}

@@ -28,7 +28,20 @@
 			{ id: 8, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
 			{ id: 9, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
 			{ id: 10, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 11, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
+			{ id: 11, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 12, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 13, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 14, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 15, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 16, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 17, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 18, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 19, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 20, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 21, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 22, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 23, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
+			{ id: 24, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
 		],
 		'£': [
 			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦3,500.00/£1', spread: '-₦10' },
