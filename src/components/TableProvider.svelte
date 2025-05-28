@@ -74,8 +74,8 @@
 		<!-- Header -->
 		<div class="grid-header">Provider</div>
 		<div class="grid-header">Sell Price</div>
-		<div class="grid-header">Spread</div>
-		<div class="grid-header"></div>
+		<div class="grid-header grid-spread">Spread</div>
+		<div class="grid-header grid-arr"></div>
 
 		<!-- Rows -->
 		{#each providerData[selected] as provider}
@@ -84,8 +84,8 @@
 				<span>{provider.name}</span>
 			</div>
 			<div class="grid-cell">{provider.price}</div>
-			<div class="grid-cell"><SpreadFigure value={provider.spread} /></div>
-			<div class="grid-cell">
+			<div class="grid-cell grid-spread"><SpreadFigure value={provider.spread} /></div>
+			<div class="grid-cell grid-arr">
 				<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
 			</div>
 		{/each}
@@ -93,6 +93,13 @@
 </div>
 
 <style>
+	.grid-spread {
+		width: 70px;
+	}
+
+	.grid-arr {
+		margin-left: -20px;
+	}
 	.select-provider {
 		margin-top: 50px;
 	}
@@ -102,21 +109,24 @@
 		grid-template-columns: 1fr 1fr 1fr auto;
 		gap: 8px;
 		align-items: center;
-		font-size: 14px;
+		font-size: 1.6em;
 		margin-bottom: 100px;
 	}
 
 	/* Header styling */
 	.grid-header {
-		font-weight: bold;
+		font-weight: 700;
 		color: #555;
 		padding: 8px 0;
+		font-size: 1.2em;
 	}
 
 	/* Cell styling */
 	.grid-cell {
 		padding: 6px 0;
 		color: #333;
+		font-weight: 500;
+		font-size: 1.1em;
 	}
 
 	.provider-info {

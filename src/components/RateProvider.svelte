@@ -219,31 +219,32 @@
 	<table class="rate-table">
 		<thead class="rate-table-heading">
 			<tr>
-				<th class="provide-head">Provider</th>
-				<th>Buy</th>
-				<th>Sell</th>
+				<th class="provide-head th-provider">Provider</th>
+				<th class="th-buy">Buy</th>
+				<th class="th-sell">Sell</th>
 			</tr>
 		</thead>
 		<tbody class="rate-providers">
 			{#each providers as provider}
-				<tr class="provider-data">
-					<td class="provider-name">
+				<!-- svelte-ignore node_invalid_placement_ssr -->
+				<tr class="provider-data provide-head">
+					<td class="provider-name th-provider">
 						{#if provider.logo}
 							<img src={provider.logo} alt={provider.name} />
 						{/if}
 						{provider.name}
 					</td>
 
-					<td class="provider-buy">
+					<td class="provider-buy th-buy">
 						{#if provider.rates[selected].buy !== '-'}
 							₦{provider.rates[selected].buy} <span class="per">per {selected}1</span>
 						{:else}
 							-
 						{/if}
 					</td>
-					<td class="provider-sell">
+					<td class="provider-sell th-sell">
 						{#if provider.rates[selected].sell !== '-'}
-							₦{provider.rates[selected].sell} <span class="per">per {selected}1</span>
+							₦{provider.rates[selected].sell} <span class="per">per 1 {selected}</span>
 						{:else}
 							-
 						{/if}
@@ -255,7 +256,106 @@
 </div>
 
 <style>
+	.th-provider,
+	.th-buy,
+	.th-sell {
+		width: 128px;
+	}
+
+	/* Container styling */
 	.rate-table-container {
+		border-radius: 12px;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+		overflow-x: auto;
+		max-width: 100%;
+	}
+
+	/* Currency Switcher */
+	.currencies-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.currencies {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	/* Table Headings */
+	.rate-table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.rate-table-heading {
+		background-color: #f4f6f8;
+		text-align: left;
+	}
+
+	.rate-table-heading th {
+		padding: 0.75rem 1rem;
+		font-weight: 600;
+		font-size: 0.875rem;
+		color: #333;
+		white-space: nowrap;
+	}
+
+	/* Table Rows */
+	.rate-providers tr {
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.provider-data td {
+		padding: 1rem;
+		font-size: 0.875rem;
+		vertical-align: middle;
+	}
+
+	/* Provider Column */
+	.provider-name {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 500;
+	}
+
+	.provider-name img {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+	}
+
+	/* Buy/Sell */
+	.provider-buy,
+	.provider-sell {
+		color: #222;
+	}
+
+	.per {
+		font-size: 0.7em;
+		color: var(--text-color-light);
+		display: block;
+	}
+
+	/* Responsive tweaks */
+	/* @media (max-width: 768px) {
+		.rate-table-heading th,
+		.provider-data td {
+			font-size: 0.75rem;
+			padding: 0.5rem;
+		}
+
+		.provider img {
+			width: 20px;
+			height: 20px;
+		}
+	} */
+
+	/* .rate-table-container {
 		font-family: inherit;
 		border-radius: 8px;
 		max-width: 700px;
@@ -265,23 +365,33 @@
 	}
 
 	.rate-table {
-		width: 100%;
+		
 		border-collapse: collapse;
 		color: #000000;
-	}
+		overflow-x: scroll;
 
-	.rate-table-heading {
-		color: var(--text-color-light);
-	}
+		font-weight: 800;
 
-	.rate-providers {
 		height: 80vh;
 		overflow-y: auto;
 	}
 
+	.rate-table-heading {
+		color: var(--text-color-light);
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.rate-providers {
+		border: 2px solid red;
+		width: 320px;
+		overflow: scroll;
+	}
+
 	.provide-head {
-		width: 163px;
-		padding-right: 0;
+	
+		display: inline-block;
+		
 	}
 
 	.provider-data {
@@ -292,7 +402,7 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		font-weight: 500;
+		font-weight: 700;
 	}
 
 	.provider-name img {
@@ -306,4 +416,25 @@
 		color: var(--text-color-light);
 		display: block;
 	}
+
+	.provider-buy {
+		padding-left: 10px;
+		font-weight: 700;
+	}
+
+	.provider-sell {
+		
+		font-weight: 700;
+	}
+
+	.th-buy {
+		display: inline-block;
+	}
+	
+	.th-sell {
+		background-color: orange;
+		width: fit-content;
+		margin-left: 0px;
+		display: inline;
+	} */
 </style>
