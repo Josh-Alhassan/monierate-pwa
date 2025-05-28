@@ -118,15 +118,15 @@
 		font-weight: 700;
 		color: #555;
 		padding: 8px 0;
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
 	/* Cell styling */
 	.grid-cell {
 		padding: 6px 0;
 		color: #333;
-		font-weight: 500;
-		font-size: 1.1em;
+		font-weight: 600;
+		font-size: 0.7em;
 	}
 
 	.provider-info {

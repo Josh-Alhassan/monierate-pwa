@@ -107,9 +107,9 @@
 							<option class="select-option" value="" disabled selected hidden
 								>Select a currency
 							</option>
-							<option class="select-option" value="usd"> USD - US Dollar</option>
-							<option class="select-option" value="eur">EUR - Euros</option>
-							<option class="select-option" value="gbp">GBP - Pounds</option>
+							<option class="select-option" value="usd"> 💵 - US Dollar</option>
+							<option class="select-option" value="eur">💶 - Euros</option>
+							<option class="select-option" value="gbp">💷 - Pounds</option>
 						</select>
 						<input
 							type="number"
@@ -131,9 +131,9 @@
 					<div class="trade-container">
 						<select id="currency" class="currency-select" required>
 							<option class="select-option" value=""> </option>
-							<option class="select-option" value="usd"> 🤑 - US Dollars </option>
-							<option class="select-option" value="eur">EUR - Euros</option>
-							<option class="select-option" value="gbp">GBP - Pounds</option>
+							<option class="select-option" value="usd"> 💵 - US Dollars </option>
+							<option class="select-option" value="eur">💶 - Euros</option>
+							<option class="select-option" value="gbp">💷 - Pounds</option>
 						</select>
 						<input
 							type="number"
