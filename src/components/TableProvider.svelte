@@ -72,8 +72,8 @@
 	<!-- Table -->
 	<div class="provider-grid">
 		<!-- Header -->
-		<div class="grid-header">Provider</div>
-		<div class="grid-header">Sell Price</div>
+		<div class="grid-header grid-provider">Provider</div>
+		<div class="grid-header grid-sell">Sell Price</div>
 		<div class="grid-header grid-spread">Spread</div>
 		<div class="grid-header grid-arr"></div>
 
@@ -83,16 +83,23 @@
 				<img src={provider.logo} alt={provider.name} class="logo" />
 				<span>{provider.name}</span>
 			</div>
-			<div class="grid-cell">{provider.price}</div>
+			<div class="grid-cell grid-sell">{provider.price}</div>
 			<div class="grid-cell grid-spread"><SpreadFigure value={provider.spread} /></div>
 			<div class="grid-cell grid-arr">
 				<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
 			</div>
 		{/each}
+
+		
 	</div>
 </div>
 
 <style>
+	.grid-sell,
+	.grid-spread {
+		text-align: right;
+	}
+
 	.grid-spread {
 		width: 70px;
 	}

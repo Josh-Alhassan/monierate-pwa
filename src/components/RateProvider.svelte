@@ -262,6 +262,11 @@
 		width: 128px;
 	}
 
+	.th-buy,
+	.th-sell {
+		text-align: right;
+	}
+
 	/* Container styling */
 	.rate-table-container {
 		border-radius: 12px;
@@ -293,7 +298,6 @@
 
 	.rate-table-heading {
 		background-color: #f4f6f8;
-		text-align: left;
 	}
 
 	.rate-table-heading th {
