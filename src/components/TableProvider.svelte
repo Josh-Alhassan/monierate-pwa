@@ -71,7 +71,7 @@
 
 	<!-- Table -->
 	<div class="sticky-wrap">
-		<div class="provider-header">
+		<div class="provider-header currencies-wrap">
 			<!-- Header -->
 			<div class="grid-header grid-provider">Provider</div>
 			<div class="grid-header grid-sell">Sell Price</div>
@@ -114,13 +114,13 @@
 
 	.select-provider {
 		margin-top: 50px;
-		height: 80vh; /* Set desired height for scrollable area */
+		height: 95vh;
 		overflow-y: auto;
 		scroll-behavior: smooth;
 	}
 
 	.scrollable-container {
-		height: 400px; /* Adjust height as needed */
+		height: 400px;
 		overflow-y: auto;
 	}
 
@@ -130,7 +130,7 @@
 		gap: 8px;
 		align-items: center;
 		font-size: 1.4em;
-		padding-bottom: 0.5em;
+		padding-bottom: 0.1em;
 	}
 
 	.provider-grid {
@@ -151,7 +151,7 @@
 		font-size: 1.1em;
 
 		position: sticky;
-		top: 60px; /* push below .currencies-wrap */
+		top: 60px;
 		background: white;
 		z-index: 5;
 	}
@@ -175,14 +175,12 @@
 		height: 18px;
 	}
 
-	/* Wrapper to enable vertical scrolling for provider grid */
-
 	.currencies-wrap {
 		position: sticky;
 		top: 0;
 		z-index: 10;
 		background: white;
-		padding: 12px 0;
+		padding: 5px 0;
 		border-bottom: 1px solid #eee;
 	}
 </style>
