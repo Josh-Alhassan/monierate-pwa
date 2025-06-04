@@ -70,27 +70,31 @@
 	</div>
 
 	<!-- Table -->
-	<div class="provider-grid">
-		<!-- Header -->
-		<div class="grid-header grid-provider">Provider</div>
-		<div class="grid-header grid-sell">Sell Price</div>
-		<div class="grid-header grid-spread">Spread</div>
-		<div class="grid-header grid-arr"></div>
+	<div class="sticky-wrap">
+		<div class="provider-header">
+			<!-- Header -->
+			<div class="grid-header grid-provider">Provider</div>
+			<div class="grid-header grid-sell">Sell Price</div>
+			<div class="grid-header grid-spread">Spread</div>
+			<div class="grid-header grid-arr"></div>
+		</div>
 
 		<!-- Rows -->
-		{#each providerData[selected] as provider}
-			<div class="grid-cell provider-info">
-				<img src={provider.logo} alt={provider.name} class="logo" />
-				<span>{provider.name}</span>
+		<div class="scrollable-container">
+			<div class="provider-grid">
+				{#each providerData[selected] as provider}
+					<div class="grid-cell provider-info">
+						<img src={provider.logo} alt={provider.name} class="logo" />
+						<span>{provider.name}</span>
+					</div>
+					<div class="grid-cell grid-sell">{provider.price}</div>
+					<div class="grid-cell grid-spread"><SpreadFigure value={provider.spread} /></div>
+					<div class="grid-cell grid-arr">
+						<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+					</div>
+				{/each}
 			</div>
-			<div class="grid-cell grid-sell">{provider.price}</div>
-			<div class="grid-cell grid-spread"><SpreadFigure value={provider.spread} /></div>
-			<div class="grid-cell grid-arr">
-				<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
-			</div>
-		{/each}
-
-		
+		</div>
 	</div>
 </div>
 
@@ -107,8 +111,26 @@
 	.grid-arr {
 		margin-left: -20px;
 	}
+
 	.select-provider {
 		margin-top: 50px;
+		height: 80vh; /* Set desired height for scrollable area */
+		overflow-y: auto;
+		scroll-behavior: smooth;
+	}
+
+	.scrollable-container {
+		height: 400px; /* Adjust height as needed */
+		overflow-y: auto;
+	}
+
+	.provider-header {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr auto;
+		gap: 8px;
+		align-items: center;
+		font-size: 1.4em;
+		padding-bottom: 0.5em;
 	}
 
 	.provider-grid {
@@ -118,6 +140,7 @@
 		align-items: center;
 		font-size: 1.6em;
 		margin-bottom: 100px;
+		width: 100%;
 	}
 
 	/* Header styling */
@@ -126,6 +149,11 @@
 		color: #555;
 		padding: 8px 0;
 		font-size: 1.1em;
+
+		position: sticky;
+		top: 60px; /* push below .currencies-wrap */
+		background: white;
+		z-index: 5;
 	}
 
 	/* Cell styling */
@@ -145,5 +173,16 @@
 	.logo {
 		width: 18px;
 		height: 18px;
+	}
+
+	/* Wrapper to enable vertical scrolling for provider grid */
+
+	.currencies-wrap {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: white;
+		padding: 12px 0;
+		border-bottom: 1px solid #eee;
 	}
 </style>
