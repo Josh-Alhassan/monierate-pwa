@@ -30,10 +30,27 @@
 	const handleSelectDestination = (option) => {
 		selectedDestination = option;
 	};
+
+	// 🧠 Reactive minimum input value based on selectedCurrency
+	let sendAmount = '';
+	let errorMessage = '';
+
+	function handleSubmit(event) {
+		event.preventDefault();
+
+		if (selectedCurrency.value === 'usd' && sendAmount < 100) {
+			errorMessage = 'Minimum amount to send is $100.';
+			return;
+		}
+
+		errorMessage = '';
+		// Proceed with actual form submission logic
+		console.log('Sending:', sendAmount, selectedCurrency.label, 'to', selectedDestination.label);
+	}
 </script>
 
 <div class="tab-section">
-	<form>
+	<form on:submit|preventDefault={handleSubmit}>
 		<label for="send-amount">Amount to send</label>
 		<div class="trade-container">
 			<CustomDropdown
@@ -41,8 +58,12 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" class="input-amount" required />
+			<input type="number" class="input-amount" required min="10" />
 		</div>
+
+		{#if errorMessage}
+			<p class="error">{errorMessage}</p>
+		{/if}
 
 		<label for="recipient-address">Destination Country</label>
 		<CustomDropdown
@@ -84,7 +105,17 @@
 		margin-bottom: 20px;
 	}
 
+	.input-amount {
+		text-align: right;
+	}
+
 	.input-amount:focus {
 		outline: none;
+	}
+
+	.error {
+		color: red;
+		font-size: 0.9em;
+		margin-bottom: 10px;
 	}
 </style>

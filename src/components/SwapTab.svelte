@@ -33,6 +33,11 @@
 
 	let selectedCrypto = cryptoOptions[0];
 
+	let amountToReceive = '';
+	let errorMessage = '';
+
+	let amountToSwap = '';
+
 	const handleSelect = (option) => {
 		selectedCrypto = option;
 		console.log('Selected:', option);
@@ -41,10 +46,44 @@
 	const handleSelectCurrency = (option) => {
 		selectedCurrency = option;
 	};
+
+	// 🧠 Reactive minimum input value based on selectedCryp to
+	function getMinimumAmount(asset) {
+		switch (asset.value) {
+			case 'btc':
+				return 20;
+			case 'eth':
+				return 10;
+			case 'ltc':
+				return 5;
+			default:
+				return 0;
+		}
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+
+		const minAmount = getMinimumAmount(selectedCrypto);
+		if (amountToSwap < minAmount) {
+			errorMessage = `Minimum amount for ${selectedCrypto.label} is $${minAmount}.`;
+			return;
+		}
+
+		errorMessage = '';
+		console.log(
+			'Swap initiated:',
+			amountToSwap,
+			selectedCurrency.label,
+			'to',
+			selectedCrypto.label
+		);
+		// Proceed with swap logic here
+	}
 </script>
 
 <div class="tab-section">
-	<form>
+	<form on:submit={handleSubmit}>
 		<label for="from-asset">Amount to Swap</label>
 		<div class="trade-container">
 			<CustomDropdown
@@ -52,14 +91,18 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" class="input-amount" required />
+			<input type="number" class="input-amount" required bind:value={amountToSwap} />
 		</div>
+
+		{#if errorMessage}
+			<p class="error">{errorMessage}</p>
+		{/if}
 
 		<label for="to-asset">Select Asset to Swap</label>
 		<div class="trade-container">
 			<CustomDropdown options={cryptoOptions} selected={selectedCrypto} onSelect={handleSelect} />
 
-			<input type="number" class="input-amount" required />
+			<input type="number" class="input-amount" required bind:value={amountToReceive} />
 		</div>
 
 		<button type="submit" class="trade-select">Swap</button>
@@ -95,7 +138,17 @@
 		margin-bottom: 20px;
 	}
 
+	.input-amount {
+		text-align: right;
+	}
+
 	.input-amount:focus {
 		outline: none;
+	}
+
+	.error {
+		color: red;
+		font-size: 0.9em;
+		margin-bottom: 10px;
 	}
 </style>

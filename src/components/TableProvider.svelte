@@ -120,7 +120,7 @@
 	}
 
 	.scrollable-container {
-		height: 400px;
+		height: 600px;
 		overflow-y: auto;
 	}
 
@@ -139,7 +139,7 @@
 		gap: 8px;
 		align-items: center;
 		font-size: 1.6em;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 		width: 100%;
 	}
 

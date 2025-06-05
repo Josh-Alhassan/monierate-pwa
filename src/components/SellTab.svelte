@@ -42,11 +42,41 @@
 		selectedCurrency = option;
 	};
 
+	let sellAmount = ''; // User-entered value
+	let errorMessage = '';
+
 	let bindValue = '$3000';
+
+	function getMinimumAmount(asset) {
+		switch (asset.value) {
+			case 'btc':
+				return 20;
+			case 'eth':
+				return 10;
+			case 'ltc':
+				return 5;
+			default:
+				return 0;
+		}
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+
+		const minAmount = getMinimumAmount(selectedCrypto);
+		if (sellAmount < minAmount) {
+			errorMessage = `Minimum amount for ${selectedCrypto.label} is $${minAmount}.`;
+			return;
+		}
+
+		errorMessage = '';
+		console.log('Selling', sellAmount, selectedCurrency.label, 'for', selectedCrypto.label);
+		// Add actual sell logic here
+	}
 </script>
 
 <div class="tab-section">
-	<form>
+	<form on:submit={handleSubmit}>
 		<label for="sell-amount">Amount to sell (fiat)</label>
 		<div class="trade-container">
 			<CustomDropdown
@@ -54,13 +84,17 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" id="sell-amount" class="input-amount" value={bindValue} required />
+			<input type="number" id="sell-amount" class="input-amount" required bind:value={sellAmount} />
 		</div>
 
 		<label for="buy-asset">Asset to buy</label>
 		<div class="trade-container">
 			<CustomDropdown options={cryptoOptions} selected={selectedCrypto} onSelect={handleSelect} />
 		</div>
+
+		{#if errorMessage}
+			<p class="error">{errorMessage}</p>
+		{/if}
 
 		<button type="submit" class="trade-select">Select</button>
 	</form>
@@ -97,5 +131,11 @@
 	.input-amount:focus {
 		outline: none;
 		text-align: right;
+	}
+
+	.error {
+		color: red;
+		font-size: 0.9em;
+		margin-bottom: 10px;
 	}
 </style>

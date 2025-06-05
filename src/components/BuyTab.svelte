@@ -49,10 +49,23 @@
 	function handleTabClick(tab) {
 		activeTab = tab;
 	}
+
+	let buyAmount = '';
+
+	// 🧠 Reactive minimum input value based on selectedCrypto
+	$: minAmount = selectedCrypto.value === 'btc' ? 500 : 100;
 </script>
 
-<div class="sell-section">
-	<form>
+<div class="sell-section" on:select={handleTabClick}>
+	<form
+		on:submit|preventDefault={() => {
+			if (+buyAmount < minAmount) {
+				alert(`Minimum amount for ${selectedCrypto.label} is $${minAmount}`);
+				return;
+			}
+			// proceed with the form logic
+		}}
+	>
 		<label for="buy-amount">Amount to buy (crypto)</label>
 		<div class="trade-container">
 			<CustomDropdown
@@ -60,7 +73,14 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" id="buy-amount" class="input-amount" required />
+			<input
+				type="number"
+				id="buy-amount"
+				class="input-amount"
+				required
+				bind:value={buyAmount}
+				min={minAmount}
+			/>
 		</div>
 
 		<label for="fiat-currency">Select Asset to Buy</label>
@@ -73,27 +93,6 @@
 </div>
 
 <style>
-	/* .trade-btns {
-		display: flex;
-		gap: 20px;
-		margin-top: 14px;
-		margin-bottom: 20px;
-	}
-
-	.trade-btn {
-		padding: 12px 24px;
-		font-size: 1.2em;
-		font-family: inherit;
-		font-weight: 600;
-		color: var(--text-color-light);
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-		transition: background-color 0.2s;
-		text-transform: uppercase;
-		width: 100%;
-	} */
-
 	.trade-select {
 		padding: 12px 24px;
 		font-size: 1.2em;
@@ -126,31 +125,7 @@
 		outline: none;
 	}
 
-	/* 
-
-	.nav-routes {
-		margin-top: 5rem;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		gap: 20px;
+	.input-amount {
+		text-align: right;
 	}
-
-	.nav-routes-btn {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-		align-items: center;
-		text-decoration: none;
-		color: var(--text-color-alt);
-		font-size: 1.4em;
-	}
-
-	.active {
-		background: var(--primary-color);
-		color: var(--text-color-white);
-		padding: 15px 25px;
-		border-radius: 10px;
-	} */
 </style>
