@@ -1,51 +1,35 @@
 <script>
+	import axios from 'axios';
 	import CustomDropdown from './CustomDropdown.svelte';
 	import Bitcoin from '../assets/logos_bitcoin.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
+	let sellAmount = '';
+	let errorMessage = '';
+	let isLoading = false;
+	let exchangeRate = null;
+
+	const MONIERATE_API_URL = 'https://api.monierate.com/core/rates/currencies.json?code=USD';
+	const API_TOKEN = '375a3ca5bf7c7c280af2de0c9796a8dfbc8a0437782c13611181eecb07a950cd';
+
 	const cryptoOptions = [
-		{
-			value: 'btc',
-			label: 'BTC',
-			icon: Bitcoin
-		},
-		{
-			value: 'eth',
-			label: 'ETH',
-			icon: Bitcoin
-		},
-		{
-			value: 'ltc',
-			label: 'LTC',
-			icon: Bitcoin
-		}
+		{ value: 'btc', label: 'BTC', icon: Bitcoin },
+		{ value: 'eth', label: 'ETH', icon: Bitcoin },
+		{ value: 'ltc', label: 'LTC', icon: Bitcoin }
 	];
 
-	const currencyOptions = [
-		{
-			value: 'usd',
-			label: 'USD - US Dollar',
-			icon: usDollarIcon
-		}
-	];
+	const currencyOptions = [{ value: 'usd', label: 'USD - US Dollar', icon: usDollarIcon }];
 
 	let selectedCurrency = currencyOptions[0];
-
 	let selectedCrypto = cryptoOptions[0];
 
 	const handleSelect = (option) => {
 		selectedCrypto = option;
-		console.log('Selected:', option);
 	};
 
 	const handleSelectCurrency = (option) => {
 		selectedCurrency = option;
 	};
-
-	let sellAmount = ''; // User-entered value
-	let errorMessage = '';
-
-	let bindValue = '$3000';
 
 	function getMinimumAmount(asset) {
 		switch (asset.value) {
@@ -60,18 +44,47 @@
 		}
 	}
 
-	function handleSubmit(event) {
+	async function handleSubmit(event) {
 		event.preventDefault();
-
 		const minAmount = getMinimumAmount(selectedCrypto);
+
 		if (sellAmount < minAmount) {
 			errorMessage = `Minimum amount for ${selectedCrypto.label} is $${minAmount}.`;
 			return;
 		}
 
 		errorMessage = '';
-		console.log('Selling', sellAmount, selectedCurrency.label, 'for', selectedCrypto.label);
-		// Add actual sell logic here
+		isLoading = true;
+
+		try {
+			const response = await axios.get(MONIERATE_API_URL, {
+				headers: {
+					Authorization: `Token ${API_TOKEN}`
+				}
+			});
+
+			// Simulated exchange rate logic (since actual endpoint doesn't return rates)
+			const rates = {
+				btc: 65000,
+				eth: 3500,
+				ltc: 100
+			};
+
+			const rate = rates[selectedCrypto.value];
+
+			if (rate) {
+				exchangeRate = rate;
+				alert(`Exchange rate for ${selectedCrypto.label} is $${exchangeRate}`);
+			} else {
+				errorMessage = 'Exchange rate not found.';
+				exchangeRate = null;
+			}
+		} catch (err) {
+			console.error('API error:', err);
+			errorMessage = 'Failed to fetch rates. Please try again later.';
+		} finally {
+			isLoading = false;
+		}
 	}
 </script>
 
@@ -96,7 +109,19 @@
 			<p class="error">{errorMessage}</p>
 		{/if}
 
-		<button type="submit" class="trade-select">Select</button>
+		<button type="submit" class="trade-select" disabled={isLoading}>
+			{#if isLoading}
+				Fetching rate...
+			{:else}
+				Get Rate
+			{/if}
+		</button>
+
+		{#if exchangeRate}
+			<p class="success">
+				Exchange rate for {selectedCrypto.label}: <strong>${exchangeRate}</strong>
+			</p>
+		{/if}
 	</form>
 </div>
 
@@ -135,7 +160,10 @@
 
 	.error {
 		color: red;
-		font-size: 0.9em;
-		margin-bottom: 10px;
+		margin-top: 8px;
+	}
+	.success {
+		color: green;
+		margin-top: 10px;
 	}
 </style>

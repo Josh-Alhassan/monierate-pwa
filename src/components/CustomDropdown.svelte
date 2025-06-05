@@ -1,24 +1,34 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+
 	export let options = [];
 	export let selected = null;
 	export let onSelect = () => {};
 
+	const dispatch = createEventDispatcher();
 	let showOptions = false;
 
 	const toggleDropdown = () => {
 		showOptions = !showOptions;
 	};
 
+	// const selectOption = (option) => {
+	// 	selected = option;
+	// 	onSelect(option);
+	// 	showOptions = false;
+	// };
+
 	const selectOption = (option) => {
-		selected = option;
-		onSelect(option);
+		dispatch('select', option); // emit event
 		showOptions = false;
 	};
+
+	// function selectOption(option) {
+	// 	dispatch('select', option);
+	// }
 </script>
 
 <div class="custom-dropdown">
-	<!-- svelte-ignore a11y_click_events_have_key_events -->
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="selected" on:click={toggleDropdown}>
 		{#if selected}
 			<div class="selected-group">
@@ -42,8 +52,6 @@
 	{#if showOptions}
 		<div class="options">
 			{#each options as option}
-				<!-- svelte-ignore a11y_click_events_have_key_events -->
-				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<div class="option" on:click={() => selectOption(option)}>
 					<img src={option.icon} alt={option.label} />
 					<span>{option.label}</span>
