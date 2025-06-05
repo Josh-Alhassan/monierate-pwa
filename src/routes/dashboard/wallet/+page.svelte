@@ -6,6 +6,13 @@
 
 <section class="section">
 	<NavHeader backHref="/dashboard" notificationCount={2} />
-	<RateProvider />
-	<NavigationalRoutes />
 </section>
+<RateProvider />
+<NavigationalRoutes />
+
+<style>
+	.section {
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
+</style>

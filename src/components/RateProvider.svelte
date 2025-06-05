@@ -273,16 +273,26 @@
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 		overflow-x: auto;
 		max-width: 100%;
+
+		max-height: 100vh;
+		overflow-y: auto;
 	}
 
 	/* Currency Switcher */
 	.currencies-wrap {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		margin-bottom: 1rem;
 		flex-wrap: wrap;
 		gap: 1rem;
+
+		position: sticky;
+		top: 0;
+		background: white;
+		z-index: 10;
+		padding: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.currencies {
@@ -298,6 +308,10 @@
 
 	.rate-table-heading {
 		background-color: #f4f6f8;
+
+		position: sticky;
+		top: 58px;
+		z-index: 5;
 	}
 
 	.rate-table-heading th {
