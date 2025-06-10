@@ -1,6 +1,8 @@
 <script>
 	import CustomDropdown from './CustomDropdown.svelte';
 	import Bitcoin from '../assets/logos_bitcoin.svg';
+	import Ethereum from '../assets/ethereum-eth-logo.svg';
+	import Litecoin from '../assets/litecoin-ltc-logo.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
 	const cryptoOptions = [
@@ -12,12 +14,12 @@
 		{
 			value: 'eth',
 			label: 'ETH',
-			icon: Bitcoin
+			icon: Ethereum
 		},
 		{
 			value: 'ltc',
 			label: 'LTC',
-			icon: Bitcoin
+			icon: Litecoin
 		}
 	];
 

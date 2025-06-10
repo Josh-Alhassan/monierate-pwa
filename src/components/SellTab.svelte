@@ -2,6 +2,8 @@
 	import axios from 'axios';
 	import CustomDropdown from './CustomDropdown.svelte';
 	import Bitcoin from '../assets/logos_bitcoin.svg';
+	import Ethereum from '../assets/ethereum-eth-logo.svg';
+	import Litecoin from '../assets/litecoin-ltc-logo.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
 	let sellAmount = '';
@@ -14,8 +16,8 @@
 
 	const cryptoOptions = [
 		{ value: 'btc', label: 'BTC', icon: Bitcoin },
-		{ value: 'eth', label: 'ETH', icon: Bitcoin },
-		{ value: 'ltc', label: 'LTC', icon: Bitcoin }
+		{ value: 'eth', label: 'ETH', icon: Ethereum },
+		{ value: 'ltc', label: 'LTC', icon: Litecoin }
 	];
 
 	const currencyOptions = [{ value: 'usd', label: 'USD - US Dollar', icon: usDollarIcon }];
@@ -151,6 +153,10 @@
 		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 		margin-bottom: 20px;
+	}
+
+	.input-amount {
+		text-align: right;
 	}
 
 	.input-amount:focus {

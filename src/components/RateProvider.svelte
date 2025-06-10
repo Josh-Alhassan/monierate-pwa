@@ -14,195 +14,171 @@
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
 
-	const providers = [
-		{
-			name: 'Nigeria Customs',
-			logo: customs,
-			rates: {
-				$: { buy: 1599, sell: 1599 },
-				'£': { buy: 2045, sell: 2045 },
-				'€': { buy: 1895, sell: 1895 },
-				'₿': { buy: 61500000, sell: 61500000 }
-			}
-		},
-		{
-			name: 'CBN',
-			logo: cbnIcon,
-			rates: {
-				$: { buy: 1600, sell: 1599 },
-				'£': { buy: 2047, sell: 2040 },
-				'€': { buy: 1900, sell: 1890 },
-				'₿': { buy: 61700000, sell: 61400000 }
-			}
-		},
-		{
-			name: 'Paypal',
-			logo: paypal,
-			rates: {
-				$: { buy: 1602, sell: '-' },
-				'£': { buy: 2050, sell: '-' },
-				'€': { buy: 1903, sell: '-' },
-				'₿': { buy: 61800000, sell: '-' }
-			}
-		},
-		{
-			name: 'Cambridge Currencies',
-			logo: cambridge,
-			rates: {
-				$: { buy: 1606, sell: 1598 },
-				'£': { buy: 2053, sell: 2042 },
-				'€': { buy: 1910, sell: 1895 },
-				'₿': { buy: 62000000, sell: 61300000 }
-			}
-		},
-		{
-			name: 'Cedar.money',
-			logo: cedarMoney,
-			rates: {
-				$: { buy: 1606, sell: '-' },
-				'£': { buy: 2054, sell: '-' },
-				'€': { buy: 1912, sell: '-' },
-				'₿': { buy: 62200000, sell: '-' }
-			}
-		},
-		{
-			name: 'Beans App',
-			logo: beansApp,
-			rates: {
-				$: { buy: 1614, sell: 1599 },
-				'£': { buy: 2060, sell: 2040 },
-				'€': { buy: 1920, sell: 1895 },
-				'₿': { buy: 62300000, sell: 61350000 }
-			}
-		},
-		{
-			name: 'DigiOats',
-			logo: digioats,
-			rates: {
-				$: { buy: 1614, sell: 1634 },
-				'£': { buy: 2062, sell: 2080 },
-				'€': { buy: 1925, sell: 1940 },
-				'₿': { buy: 62400000, sell: 63000000 }
-			}
-		},
-		{
-			name: 'Bybit',
-			logo: bybit,
-			rates: {
-				$: { buy: 1614, sell: 1615 },
-				'£': { buy: 2061, sell: 2063 },
-				'€': { buy: 1923, sell: 1925 },
-				'₿': { buy: 62350000, sell: 62400000 }
-			}
-		},
-		{
-			name: 'Quidax',
-			logo: quidax,
-			rates: {
-				$: { buy: 1615, sell: 1614 },
-				'£': { buy: 2065, sell: 2060 },
-				'€': { buy: 1930, sell: 1923 },
-				'₿': { buy: 62500000, sell: 62300000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		},
-		{
-			name: 'GT Bank',
-			logo: gtbank,
-			rates: {
-				$: { buy: 1618, sell: 1550 },
-				'£': { buy: 2070, sell: 1985 },
-				'€': { buy: 1935, sell: 1850 },
-				'₿': { buy: 62700000, sell: 60000000 }
-			}
-		}
-	];
+	const platformLogos = {
+		cbn: cbnIcon,
+		customs: customs,
+		cedar: cedarMoney,
+		beans: beansApp,
+		digioats: digioats,
+		bybit: bybit,
+		quidax: quidax,
+		gtbank: gtbank,
+		cambridge: cambridge,
+		paypal: paypal
+	};
 
+	const gtBankEntry = {
+		name: 'GT Bank',
+		logo: gtbank,
+		rates: {
+			$: { buy: 1618, sell: 1550 },
+			'£': { buy: 2070, sell: 1985 },
+			'€': { buy: 1935, sell: 1850 },
+			'₿': { buy: 62700000, sell: 60000000 }
+		}
+	};
+
+	// const providers = [
+	// 	{
+	// 		name: 'Nigeria Customs',
+	// 		logo: customs,
+	// 		rates: {
+	// 			$: { buy: 1599, sell: 1599 },
+	// 			'£': { buy: 2045, sell: 2045 },
+	// 			'€': { buy: 1895, sell: 1895 },
+	// 			'₿': { buy: 61500000, sell: 61500000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'CBN',
+	// 		logo: cbnIcon,
+	// 		rates: {
+	// 			$: { buy: 1600, sell: 1599 },
+	// 			'£': { buy: 2047, sell: 2040 },
+	// 			'€': { buy: 1900, sell: 1890 },
+	// 			'₿': { buy: 61700000, sell: 61400000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Paypal',
+	// 		logo: paypal,
+	// 		rates: {
+	// 			$: { buy: 1602, sell: '-' },
+	// 			'£': { buy: 2050, sell: '-' },
+	// 			'€': { buy: 1903, sell: '-' },
+	// 			'₿': { buy: 61800000, sell: '-' }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Cambridge Currencies',
+	// 		logo: cambridge,
+	// 		rates: {
+	// 			$: { buy: 1606, sell: 1598 },
+	// 			'£': { buy: 2053, sell: 2042 },
+	// 			'€': { buy: 1910, sell: 1895 },
+	// 			'₿': { buy: 62000000, sell: 61300000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Cedar.money',
+	// 		logo: cedarMoney,
+	// 		rates: {
+	// 			$: { buy: 1606, sell: '-' },
+	// 			'£': { buy: 2054, sell: '-' },
+	// 			'€': { buy: 1912, sell: '-' },
+	// 			'₿': { buy: 62200000, sell: '-' }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Beans App',
+	// 		logo: beansApp,
+	// 		rates: {
+	// 			$: { buy: 1614, sell: 1599 },
+	// 			'£': { buy: 2060, sell: 2040 },
+	// 			'€': { buy: 1920, sell: 1895 },
+	// 			'₿': { buy: 62300000, sell: 61350000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'DigiOats',
+	// 		logo: digioats,
+	// 		rates: {
+	// 			$: { buy: 1614, sell: 1634 },
+	// 			'£': { buy: 2062, sell: 2080 },
+	// 			'€': { buy: 1925, sell: 1940 },
+	// 			'₿': { buy: 62400000, sell: 63000000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Bybit',
+	// 		logo: bybit,
+	// 		rates: {
+	// 			$: { buy: 1614, sell: 1615 },
+	// 			'£': { buy: 2061, sell: 2063 },
+	// 			'€': { buy: 1923, sell: 1925 },
+	// 			'₿': { buy: 62350000, sell: 62400000 }
+	// 		}
+	// 	},
+	// 	{
+	// 		name: 'Quidax',
+	// 		logo: quidax,
+	// 		rates: {
+	// 			$: { buy: 1615, sell: 1614 },
+	// 			'£': { buy: 2065, sell: 2060 },
+	// 			'€': { buy: 1930, sell: 1923 },
+	// 			'₿': { buy: 62500000, sell: 62300000 }
+	// 		}
+	// 	},
+	// 	...Array(3).fill(gtBankEntry)
+	// ];
+
+	let providers = [];
 	let currencies = ['$', '£', '€', '₿'];
 	let selected = '$';
+	let lastUpdated = '';
 
 	const handleSelect = (val) => {
 		selected = val;
 	};
+
+	async function fetchRates() {
+		try {
+			const response = await axios.get(
+				'https://api.monierate.com/core/rates/platforms.json?ticker=usdngn',
+				{
+					headers: {
+						Accept: 'application/json',
+						Authorization: 'Bearer 375a3ca5bf7c7c280af2de0c9796a8dfbc8a0437782c13611181eecb07a950cd'
+					}
+				}
+			);
+			const platforms = response.data.data.platforms;
+
+			providers = platforms.map((platform) => ({
+				name: platform.code.toUpperCase(),
+				logo: platformLogos[platform.code] || null,
+				rates: {
+					$: {
+						buy: platform.buy || '-',
+						sell: platform.sell || '-'
+					},
+					'£': { buy: '-', sell: '-' },
+					'€': { buy: '-', sell: '-' },
+					'₿': { buy: '-', sell: '-' }
+				}
+			}));
+
+			// Convert timestamp to human-readable time
+			const time = new Date(platforms[0]?.last_updated);
+			lastUpdated = time.toLocaleTimeString();
+		} catch (error) {
+			console.error('Error fetching rates:', error);
+		}
+	}
+
+	onMount(() => {
+		fetchRates();
+	});
 </script>
 
 <div class="rate-table-container">
@@ -213,7 +189,7 @@
 				<Currency value={currency} active={selected === currency} onSelect={handleSelect} />
 			{/each}
 		</div>
-		<LabelTag text="12mins ago" icon={ClockIcon} />
+		<LabelTag text={`Updated at ${lastUpdated}`} icon={ClockIcon} />
 	</div>
 
 	<table class="rate-table">
@@ -226,7 +202,6 @@
 		</thead>
 		<tbody class="rate-providers">
 			{#each providers as provider}
-				<!-- svelte-ignore node_invalid_placement_ssr -->
 				<tr class="provider-data provide-head">
 					<td class="provider-name th-provider">
 						{#if provider.logo}
