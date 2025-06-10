@@ -65,7 +65,6 @@
 				alert(`Minimum amount for ${selectedCrypto.label} is $${minAmount}`);
 				return;
 			}
-			// proceed with the form logic
 		}}
 	>
 		<label for="buy-amount">Amount to buy (crypto)</label>
