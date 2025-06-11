@@ -2,6 +2,8 @@
 	import bitnob from '../assets/bitnob.svg';
 	import cedarMoney from '../assets/cedermoney.svg';
 	import beansapp from '../assets/beansapp-svg.svg';
+	import yellowCard from '../assets/YellowCardLogo.svg';
+	import onramp from '../assets/onramp.png';
 	import Currency from '../utilities/Currency.svelte';
 	import LabelTag from '../utilities/LabelTag.svelte';
 	import ClockIcon from '../utilities/ClockIcon.svelte';
@@ -18,30 +20,46 @@
 
 	const providerData = {
 		$: [
-			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦2,800.28/$1', spread: '-₦5' },
-			{ id: 2, name: 'Cedarmoney', logo: cedarMoney, price: '₦2,790.00/$1', spread: '-₦15' },
-			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 4, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 5, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 6, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 7, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 8, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 9, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 10, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 11, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 12, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 13, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 14, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 15, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 16, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 17, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 18, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 19, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 20, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 21, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 22, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 23, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' },
-			{ id: 24, name: 'Beansapp', logo: beansapp, price: '₦2,755.10/$1', spread: '-₦45' }
+			{
+				id: 0,
+				name: 'YellowCard',
+				logo: yellowCard,
+				price: '₦1,600.28/$1',
+				spread: '-₦5',
+				url: 'dashboard/widgets/yellowcard'
+			},
+			{
+				id: 1,
+				name: 'onramp',
+				logo: onramp,
+				price: '₦2,800.28/$1',
+				spread: '-₦5',
+				url: 'dashboard/widgets/onramp'
+			},
+			{
+				id: 2,
+				name: 'Cedarmoney',
+				logo: cedarMoney,
+				price: '₦2,790.00/$1',
+				spread: '-₦15',
+				url: 'https://app.cedar.money/auth/register/'
+			},
+			{
+				id: 3,
+				name: 'Bitnob',
+				logo: bitnob,
+				price: '₦2,755.10/$1',
+				spread: '-₦45',
+				url: 'https://app.bitnob.co/accounts/signup'
+			},
+			{
+				id: 4,
+				name: 'Beansapp',
+				logo: beansapp,
+				price: '₦2,800.28/$1',
+				spread: '-₦45',
+				url: 'dashboard/'
+			}
 		],
 		'£': [
 			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦3,500.00/£1', spread: '-₦10' },
@@ -90,7 +108,7 @@
 					<div class="grid-cell grid-sell">{provider.price}</div>
 					<div class="grid-cell grid-spread"><SpreadFigure value={provider.spread} /></div>
 					<div class="grid-cell grid-arr">
-						<ArrowLink href="/dashboard/provider" icon={rightArrow} alt="Go to provider page" />
+						<ArrowLink href={provider.url} icon={rightArrow} alt="Go to provider page" />
 					</div>
 				{/each}
 			</div>
