@@ -5,6 +5,8 @@
 	import Litecoin from '../assets/litecoin-ltc-logo.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
+	import { sellAmount } from '../stores/sellAmount.js';
+
 	const cryptoOptions = [
 		{
 			value: 'btc',
@@ -44,7 +46,7 @@
 		selectedCurrency = option;
 	};
 
-	let activeTab = 'Sell';
+	let activeTab = [tabs[0]];
 
 	const tabs = ['Sell', 'Buy', 'Send', 'Swap'];
 
@@ -52,7 +54,8 @@
 		activeTab = tab;
 	}
 
-	let buyAmount = '';
+	let inputAmount = '';
+	$: sellAmount.set(+inputAmount);
 
 	// 🧠 Reactive minimum input value based on selectedCrypto
 	$: minAmount = selectedCrypto.value === 'btc' ? 500 : 100;
@@ -79,7 +82,7 @@
 				id="buy-amount"
 				class="input-amount"
 				required
-				bind:value={buyAmount}
+				bind:value={inputAmount}
 				min={minAmount}
 			/>
 		</div>

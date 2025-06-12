@@ -2,50 +2,42 @@
 	import CustomDropdown from './CustomDropdown.svelte';
 	import usDollarIcon from '../assets/us-dollar.svg';
 	import NigerianIcon from '../assets/nigerian-flag.svg';
+	import { sellAmount } from '../stores/sellAmount.js';
 
-	const currencyOptions = [
-		{
-			value: 'usd',
-			label: 'USD - US Dollar',
-			icon: usDollarIcon
-		}
+	const currencyOptions = [{ value: 'usd', label: 'USD - US Dollar', icon: usDollarIcon }];
+
+	const destinationOptions = [
+		{ value: 'nigeria', label: "You're sending to Nigeria", icon: NigerianIcon }
 	];
 
 	let selectedCurrency = currencyOptions[0];
+	let selectedDestination = destinationOptions[0];
+	let inputAmount = '';
+
+	$: sellAmount.set(+inputAmount);
+
+	let errorMessage = '';
 
 	const handleSelectCurrency = (option) => {
 		selectedCurrency = option;
 	};
 
-	const destinationOptions = [
-		{
-			value: 'nigeria',
-			label: "You're sending to Nigeria",
-			icon: NigerianIcon
-		}
-	];
-
-	let selectedDestination = destinationOptions[0];
-
 	const handleSelectDestination = (option) => {
 		selectedDestination = option;
 	};
 
-	// 🧠 Reactive minimum input value based on selectedCurrency
-	let sendAmount = '';
-	let errorMessage = '';
-
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		if (selectedCurrency.value === 'usd' && sendAmount < 100) {
+		const amount = +inputAmount;
+
+		if (selectedCurrency.value === 'usd' && amount < 100) {
 			errorMessage = 'Minimum amount to send is $100.';
 			return;
 		}
 
 		errorMessage = '';
-		// Proceed with actual form submission logic
-		console.log('Sending:', sendAmount, selectedCurrency.label, 'to', selectedDestination.label);
+		console.log('Sending:', amount, selectedCurrency.label, 'to', selectedDestination.label);
 	}
 </script>
 
@@ -58,7 +50,14 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" class="input-amount" required min="10" />
+			<input
+				type="number"
+				id="sell-amount"
+				class="input-amount"
+				required
+				bind:value={inputAmount}
+				min="0"
+			/>
 		</div>
 
 		{#if errorMessage}

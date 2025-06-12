@@ -6,7 +6,11 @@
 	import Litecoin from '../assets/litecoin-ltc-logo.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
-	let sellAmount = '';
+	import { sellAmount } from '../stores/sellAmount.js';
+	import { onMount } from 'svelte';
+
+	// let sellAmount = '';
+
 	let errorMessage = '';
 	let isLoading = false;
 	let exchangeRate = null;
@@ -99,7 +103,13 @@
 				selected={selectedCurrency}
 				onSelect={handleSelectCurrency}
 			/>
-			<input type="number" id="sell-amount" class="input-amount" required bind:value={sellAmount} />
+			<input
+				type="number"
+				id="sell-amount"
+				class="input-amount"
+				required
+				bind:value={$sellAmount}
+			/>
 		</div>
 
 		<label for="buy-asset">Asset to buy</label>

@@ -5,6 +5,8 @@
 	import Litecoin from '../assets/litecoin-ltc-logo.svg';
 	import usDollarIcon from '../assets/us-dollar.svg';
 
+	import { sellAmount } from '../stores/sellAmount.js';
+
 	const cryptoOptions = [
 		{
 			value: 'btc',
@@ -39,6 +41,7 @@
 	let errorMessage = '';
 
 	let amountToSwap = '';
+	$: sellAmount.set(+amountToSwap);
 
 	const handleSelect = (option) => {
 		selectedCrypto = option;
