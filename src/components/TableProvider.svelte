@@ -50,11 +50,11 @@
 				logo: bitnob,
 				price: '₦2,755.10/$1',
 				spread: '-₦45',
-				url: 'https://app.bitnob.co/accounts/signup'
+				url: 'dasdboard/widgets/bitnob'
 			},
 			{
 				id: 4,
-				name: 'Beansapp',
+				name: 'Quidax',
 				logo: beansapp,
 				price: '₦2,800.28/$1',
 				spread: '-₦45',
