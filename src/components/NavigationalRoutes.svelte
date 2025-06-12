@@ -30,7 +30,7 @@
 		position: fixed;
 		bottom: -56px;
 		left: 50%;
-		width: 400px;
+		width: 420px;
 		transform: translate(-50%, -50%);
 		display: flex;
 		justify-content: space-between;

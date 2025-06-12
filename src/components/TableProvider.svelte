@@ -42,7 +42,7 @@
 				logo: cedarMoney,
 				price: '₦2,790.00/$1',
 				spread: '-₦15',
-				url: 'https://app.cedar.money/auth/register/'
+				url: 'dashboard/widgets/cedarmoney'
 			},
 			{
 				id: 3,
@@ -62,8 +62,22 @@
 			}
 		],
 		'£': [
-			{ id: 1, name: 'Bitnob', logo: bitnob, price: '₦3,500.00/£1', spread: '-₦10' },
-			{ id: 2, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
+			{
+				id: 1,
+				name: 'YellowCard',
+				logo: yellowCard,
+				price: '₦3,500.00/£1',
+				spread: '-₦10',
+				url: 'dashboard/widgets/yellowcard'
+			},
+			{
+				id: 2,
+				name: 'onramp',
+				logo: onramp,
+				price: '₦3,420.00/£1',
+				spread: '-₦90',
+				url: 'dashboard/widgets/onramp'
+			},
 			{ id: 3, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
 			{ id: 4, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' },
 			{ id: 5, name: 'Beansapp', logo: beansapp, price: '₦3,420.00/£1', spread: '-₦90' }
