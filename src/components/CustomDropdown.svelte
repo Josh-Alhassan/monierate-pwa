@@ -12,23 +12,15 @@
 		showOptions = !showOptions;
 	};
 
-	// const selectOption = (option) => {
-	// 	selected = option;
-	// 	onSelect(option);
-	// 	showOptions = false;
-	// };
-
 	const selectOption = (option) => {
 		dispatch('select', option); // emit event
 		showOptions = false;
 	};
-
-	// function selectOption(option) {
-	// 	dispatch('select', option);
-	// }
 </script>
 
 <div class="custom-dropdown">
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="selected" on:click={toggleDropdown}>
 		{#if selected}
 			<div class="selected-group">
@@ -36,7 +28,7 @@
 				<span>{selected.label}</span>
 			</div>
 		{:else}
-			<span>Select asset</span>
+			<span class="select-asset">Select asset</span>
 		{/if}
 		<svg width="10" height="6" viewBox="0 0 10 6" fill="none">
 			<path
@@ -52,9 +44,11 @@
 	{#if showOptions}
 		<div class="options">
 			{#each options as option}
+				<!-- svelte-ignore a11y_click_events_have_key_events -->
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<div class="option" on:click={() => selectOption(option)}>
 					<img src={option.icon} alt={option.label} />
-					<span>{option.label}</span>
+					<span class="select-asset">{option.label}</span>
 				</div>
 			{/each}
 		</div>
@@ -96,6 +90,7 @@
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		font-size: 1.4em;
 	}
 
 	.selected img {
@@ -136,5 +131,11 @@
 	.option img {
 		width: 18px;
 		height: 18px;
+	}
+
+	.select-asset {
+		font-size: 1.4em;
+		padding: 10px 0px;
+		color: #333;
 	}
 </style>

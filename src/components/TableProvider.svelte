@@ -17,7 +17,7 @@
 	};
 
 	$: filteredProviders =
-		$sellAmount >= 10000
+		$sellAmount > 10000
 			? providerData[selected].filter((p) => p.minAmount <= $sellAmount)
 			: providerData[selected];
 </script>

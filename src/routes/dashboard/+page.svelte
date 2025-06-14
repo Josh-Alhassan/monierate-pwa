@@ -125,20 +125,20 @@
 	}
 
 	.monierate-logo {
-		width: 54px;
+		width: 20%;
 		height: auto;
 	}
 
 	.trade-btns {
 		display: flex;
-		gap: 20px;
+		gap: 5px;
 		margin-top: 14px;
 		margin-bottom: 20px;
 	}
 
 	.trade-btn {
-		padding: 12px;
-		font-size: 1.1em;
+		padding: 1.3em;
+		font-size: 1.2em;
 		font-family: 'Onest', sans-serif;
 		font-weight: 600;
 		color: var(--text-color-light);

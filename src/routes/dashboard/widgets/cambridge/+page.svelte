@@ -3,7 +3,7 @@
 	import NavHeader from '../../../../utilities/NavHeader.svelte';
 
 	// Construct URL — adjust based on Quidax widget docs if format changes
-	const widgetUrl = `https://www.eurochange.co.uk/travel-money`;
+	const widgetUrl = `https://cambridgecurrencies.com/monierate/`;
 </script>
 
 <main>

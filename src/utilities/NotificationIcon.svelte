@@ -1,7 +1,7 @@
 <!-- NotificationIcon.svelte -->
 <script>
-	export let width = 20;
-	export let height = 20;
+	export let width = 25;
+	export let height = 25;
 	export let fill = 'none';
 	export let stroke = '#939393';
 </script>

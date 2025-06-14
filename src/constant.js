@@ -35,7 +35,7 @@ export const providerData = {
 			price: '₦2,780.10/$1',
 			spread: '-₦59',
 			url: 'dashboard/widgets/cedarmoney',
-			minAmount: 7819
+			minAmount: 10000
 		},
 		{
 			id: 3,
@@ -62,7 +62,7 @@ export const providerData = {
 			price: '₦2,795.47/$1',
 			spread: '-₦36',
 			url: 'dashboard/widgets/cambridge',
-			minAmount: 96520
+			minAmount: 10520
 		},
 		{
 			id: 6,
@@ -71,7 +71,7 @@ export const providerData = {
 			price: '₦2,769.25/$1',
 			spread: '-₦44',
 			url: 'dashboard/widgets/neon',
-			minAmount: 27140
+			minAmount: 10140
 		}
 	],
 	'£': [
@@ -136,7 +136,7 @@ export const providerData = {
 			price: '₦3,486.80/£1',
 			spread: '-₦46',
 			url: 'dashboard/widgets/neon',
-			minAmount: 28655
+			minAmount: 10655
 		}
 	],
 	'€': [
@@ -147,7 +147,7 @@ export const providerData = {
 			price: '₦3,236.45/€1',
 			spread: '-₦33',
 			url: 'dashboard/widgets/cedarmoney',
-			minAmount: 25270
+			minAmount: 10270
 		},
 		{
 			id: 2,
@@ -201,7 +201,7 @@ export const providerData = {
 			price: '₦3,230.25/€1',
 			spread: '-₦30',
 			url: 'dashboard/widgets/cambridge',
-			minAmount: 37777
+			minAmount: 10777
 		},
 		{
 			id: 8,
@@ -248,7 +248,7 @@ export const providerData = {
 			price: '₦41,730,000/₿1',
 			spread: '-₦520,000',
 			url: 'dashboard/widgets/cedarmoney',
-			minAmount: 23044
+			minAmount: 10044
 		},
 		{
 			id: 5,
@@ -266,7 +266,7 @@ export const providerData = {
 			price: '₦42,180,700/₿1',
 			spread: '-₦498,000',
 			url: 'dashboard/widgets/cambridge',
-			minAmount: 101000
+			minAmount: 10100
 		},
 		{
 			id: 7,
@@ -275,7 +275,7 @@ export const providerData = {
 			price: '₦42,015,650/₿1',
 			spread: '-₦505,000',
 			url: 'dashboard/widgets/neon',
-			minAmount: 17000
+			minAmount: 10700
 		},
 		{
 			id: 8,

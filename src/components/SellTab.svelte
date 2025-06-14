@@ -167,6 +167,10 @@
 
 	.input-amount {
 		text-align: right;
+		font-size: 1.8em;
+		font-weight: 500;
+		padding: 15px 10px;
+		border: none;
 	}
 
 	.input-amount:focus {

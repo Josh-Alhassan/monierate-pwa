@@ -37,11 +37,13 @@
 		display: flex;
 		justify-content: flex-end;
 		cursor: pointer;
+		width: 15%;
+		height: 50px;
 	}
 
 	.notification {
-		width: 40px;
-		height: 40px;
+		width: 100%;
+		height: 100%;
 		background-color: var(--grey-base);
 		border-radius: 50%;
 
